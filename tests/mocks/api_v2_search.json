@@ -1,0 +1,694 @@
+{
+    "collection": [
+        {
+            "artwork_url": "https://i1.sndcdn.com/artworks-000145469462-kpsffg-large.jpg",
+            "commentable": true,
+            "comment_count": 1243,
+            "created_at": "2016-02-01T18:14:48Z",
+            "description": "(Hook) Please dont test me!",
+            "downloadable": true,
+            "download_count": 20581,
+            "download_url": "https://api.soundcloud.com/tracks/244920117/download",
+            "duration": 188229,
+            "full_duration": 188229,
+            "embeddable_by": "all",
+            "genre": "ItWillAllBeOverSoon",
+            "has_downloads_left": true,
+            "id": 244920117,
+            "kind": "track",
+            "label_name": null,
+            "last_modified": "2019-04-12T05:17:30Z",
+            "license": "all-rights-reserved",
+            "likes_count": 166213,
+            "permalink": "xxxtentacion-wifisfuneral-dont-test-me-remix",
+            "permalink_url": "https://soundcloud.com/jahseh-onfroy/xxxtentacion-wifisfuneral-dont-test-me-remix",
+            "playback_count": 11641347,
+            "public": true,
+            "publisher_metadata": {
+                "id": 244920117,
+                "urn": "soundcloud:tracks:244920117",
+                "artist": "xxxtentacion",
+                "contains_music": true,
+                "publisher": "Music Reports Inc (MRI)",
+                "isrc": "QM8DG1600865",
+                "writer_composer": "xxxtentacion",
+                "release_title": "Dont Test Me (Remix)\t"
+            },
+            "purchase_title": null,
+            "purchase_url": null,
+            "release_date": null,
+            "reposts_count": 9963,
+            "secret_token": null,
+            "sharing": "public",
+            "state": "finished",
+            "streamable": true,
+            "tag_list": "",
+            "title": "xxxtentacion & wifisfuneral Dont Test Me (Remix)",
+            "uri": "https://api.soundcloud.com/tracks/244920117",
+            "urn": "soundcloud:tracks:244920117",
+            "user_id": 48084634,
+            "visuals": null,
+            "waveform_url": "https://wave.sndcdn.com/Y0WUQqm7Ybg0_m.json",
+            "display_date": "2016-02-01T18:14:48Z",
+            "media": {
+                "transcodings": [
+                    {
+                        "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:244920117/a81da15e-f1ca-4fd5-a6cb-66438f5c1d0d/stream/hls",
+                        "preset": "mp3_0_0",
+                        "duration": 188229,
+                        "snipped": false,
+                        "format": {
+                            "protocol": "hls",
+                            "mime_type": "audio/mpeg"
+                        },
+                        "quality": "sq"
+                    },
+                    {
+                        "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:244920117/a81da15e-f1ca-4fd5-a6cb-66438f5c1d0d/stream/progressive",
+                        "preset": "mp3_0_0",
+                        "duration": 188229,
+                        "snipped": false,
+                        "format": {
+                            "protocol": "progressive",
+                            "mime_type": "audio/mpeg"
+                        },
+                        "quality": "sq"
+                    },
+                    {
+                        "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:244920117/aeff90df-2358-4077-8d16-0891784ad52b/stream/hls",
+                        "preset": "opus_0_0",
+                        "duration": 188229,
+                        "snipped": false,
+                        "format": {
+                            "protocol": "hls",
+                            "mime_type": "audio/ogg; codecs=\"opus\""
+                        },
+                        "quality": "sq"
+                    }
+                ]
+            },
+            "monetization_model": "NOT_APPLICABLE",
+            "policy": "ALLOW",
+            "user": {
+                "avatar_url": "https://i1.sndcdn.com/avatars-000313495911-m3hvhy-large.jpg",
+                "city": "",
+                "comments_count": 0,
+                "country_code": null,
+                "created_at": "2013-06-15T03:54:39Z",
+                "creator_subscriptions": [
+                    {
+                        "product": {
+                            "id": "creator-pro-unlimited"
+                        }
+                    }
+                ],
+                "creator_subscription": {
+                    "product": {
+                        "id": "creator-pro-unlimited"
+                    }
+                },
+                "description": "\n\n\n\n\n\n\n                          ''bad vibes forever.\"",
+                "followers_count": 3464508,
+                "followings_count": 0,
+                "first_name": "",
+                "full_name": "",
+                "groups_count": 0,
+                "id": 48084634,
+                "kind": "user",
+                "last_modified": "2019-01-23T05:04:34Z",
+                "last_name": "",
+                "likes_count": 621,
+                "playlist_likes_count": 9,
+                "permalink": "jahseh-onfroy",
+                "permalink_url": "https://soundcloud.com/jahseh-onfroy",
+                "playlist_count": 9,
+                "reposts_count": null,
+                "track_count": 116,
+                "uri": "https://api.soundcloud.com/users/48084634",
+                "urn": "soundcloud:users:48084634",
+                "username": "XXXTENTACION",
+                "verified": false,
+                "visuals": {
+                    "urn": "soundcloud:users:48084634",
+                    "enabled": true,
+                    "visuals": [
+                        {
+                            "urn": "soundcloud:visuals:61158457",
+                            "entry_time": 0,
+                            "visual_url": "https://i1.sndcdn.com/visuals-000048084634-KCCR43-original.jpg"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "artwork_url": "https://i1.sndcdn.com/artworks-000085857162-xdxy5c-large.jpg",
+            "commentable": true,
+            "comment_count": 1089,
+            "created_at": "2014-07-22T00:51:21Z",
+            "description": "Had a play around with this Seekae jam\r\n\r\nwww.facebook.com/flumemusic\r\nwww.flumemusic.com\r\n@seekae\r\nwww.facebook.com/seekaemusic\r\n\r\n\r\n\r\n",
+            "downloadable": true,
+            "download_count": 83440,
+            "download_url": "https://api.soundcloud.com/tracks/159723640/download",
+            "duration": 303780,
+            "full_duration": 303780,
+            "embeddable_by": "all",
+            "genre": "freedownload",
+            "has_downloads_left": true,
+            "id": 159723640,
+            "kind": "track",
+            "label_name": "Future Classic",
+            "last_modified": "2019-03-30T04:57:20Z",
+            "license": "all-rights-reserved",
+            "likes_count": 92737,
+            "permalink": "seekae-test-recognise-flume-re-work",
+            "permalink_url": "https://soundcloud.com/flume/seekae-test-recognise-flume-re-work",
+            "playback_count": 5322294,
+            "public": true,
+            "publisher_metadata": {
+                "id": 159723640,
+                "urn": "soundcloud:tracks:159723640",
+                "contains_music": true,
+                "isrc": "AUFF01400535"
+            },
+            "purchase_title": "Seekae",
+            "purchase_url": "http://www.facebook.com/seekaemusic",
+            "release_date": "2014-07-22T00:00:00Z",
+            "reposts_count": 21899,
+            "secret_token": null,
+            "sharing": "public",
+            "state": "finished",
+            "streamable": true,
+            "tag_list": "seekae flume",
+            "title": "Seekae - Test & Recognise (Flume Re-work)",
+            "uri": "https://api.soundcloud.com/tracks/159723640",
+            "urn": "soundcloud:tracks:159723640",
+            "user_id": 2976616,
+            "visuals": null,
+            "waveform_url": "https://wave.sndcdn.com/DWrL1lAN8BkP_m.json",
+            "display_date": "2014-07-22T00:51:21Z",
+            "media": {
+                "transcodings": [
+                    {
+                        "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:159723640/fb94baeb-bee4-4fa8-85e8-dea8962c51b6/stream/hls",
+                        "preset": "mp3_0_0",
+                        "duration": 303780,
+                        "snipped": false,
+                        "format": {
+                            "protocol": "hls",
+                            "mime_type": "audio/mpeg"
+                        },
+                        "quality": "sq"
+                    },
+                    {
+                        "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:159723640/fb94baeb-bee4-4fa8-85e8-dea8962c51b6/stream/progressive",
+                        "preset": "mp3_0_0",
+                        "duration": 303780,
+                        "snipped": false,
+                        "format": {
+                            "protocol": "progressive",
+                            "mime_type": "audio/mpeg"
+                        },
+                        "quality": "sq"
+                    },
+                    {
+                        "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:159723640/f332a3df-8dab-4cb5-be2d-4083aa044c85/stream/hls",
+                        "preset": "opus_0_0",
+                        "duration": 303780,
+                        "snipped": false,
+                        "format": {
+                            "protocol": "hls",
+                            "mime_type": "audio/ogg; codecs=\"opus\""
+                        },
+                        "quality": "sq"
+                    }
+                ]
+            },
+            "monetization_model": "NOT_APPLICABLE",
+            "policy": "ALLOW",
+            "user": {
+                "avatar_url": "https://i1.sndcdn.com/avatars-000599503644-u0mlff-large.jpg",
+                "city": "Sydney",
+                "comments_count": 27,
+                "country_code": "AU",
+                "created_at": "2011-02-02T06:13:50Z",
+                "creator_subscriptions": [
+                    {
+                        "product": {
+                            "id": "creator-pro-unlimited"
+                        }
+                    }
+                ],
+                "creator_subscription": {
+                    "product": {
+                        "id": "creator-pro-unlimited"
+                    }
+                },
+                "description": "- Management: mgmt@futureclassic.com.au\n- Bookings Aus/NZ: booking@futureclassic.com.au\n- Bookings USA/Canada: lhughes@paradigmagency.com + sgoodgold@paradigmagency.com\n- Bookings Europe & UK: tom@codaagency.com\n- Press: claire@bossymusic.com.au",
+                "followers_count": 2174841,
+                "followings_count": 191,
+                "first_name": "",
+                "full_name": "",
+                "groups_count": 0,
+                "id": 2976616,
+                "kind": "user",
+                "last_modified": "2019-04-01T23:21:30Z",
+                "last_name": "",
+                "likes_count": 52,
+                "playlist_likes_count": 5,
+                "permalink": "flume",
+                "permalink_url": "https://soundcloud.com/flume",
+                "playlist_count": 21,
+                "reposts_count": null,
+                "track_count": 135,
+                "uri": "https://api.soundcloud.com/users/2976616",
+                "urn": "soundcloud:users:2976616",
+                "username": "Flume",
+                "verified": false,
+                "visuals": {
+                    "urn": "soundcloud:users:2976616",
+                    "enabled": true,
+                    "visuals": [
+                        {
+                            "urn": "soundcloud:visuals:64961461",
+                            "entry_time": 0,
+                            "visual_url": "https://i1.sndcdn.com/visuals-000002976616-uySOdb-original.jpg"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "artwork_url": "https://i1.sndcdn.com/artworks-000229144733-l2400k-large.jpg",
+            "commentable": true,
+            "comment_count": 314,
+            "created_at": "2016-09-23T04:16:20Z",
+            "description": "instagram: @bubbleflip\nx's instagram: xxxtentacion\n@osprx",
+            "downloadable": false,
+            "download_count": 0,
+            "download_url": null,
+            "duration": 72991,
+            "full_duration": 72991,
+            "embeddable_by": "all",
+            "genre": "",
+            "has_downloads_left": true,
+            "id": 284238939,
+            "kind": "track",
+            "label_name": null,
+            "last_modified": "2019-04-07T11:16:25Z",
+            "license": "all-rights-reserved",
+            "likes_count": 52695,
+            "permalink": "xxxtentacion-dont-test-me",
+            "permalink_url": "https://soundcloud.com/imitatively/xxxtentacion-dont-test-me",
+            "playback_count": 4683836,
+            "public": true,
+            "publisher_metadata": {
+                "id": 284238939,
+                "urn": "soundcloud:tracks:284238939"
+            },
+            "purchase_title": null,
+            "purchase_url": null,
+            "release_date": null,
+            "reposts_count": 2331,
+            "secret_token": null,
+            "sharing": "public",
+            "state": "finished",
+            "streamable": true,
+            "tag_list": "",
+            "title": "XXXTENTACION - Don't Test Me",
+            "uri": "https://api.soundcloud.com/tracks/284238939",
+            "urn": "soundcloud:tracks:284238939",
+            "user_id": 107442489,
+            "visuals": null,
+            "waveform_url": "https://wave.sndcdn.com/RiXozU3qMfIj_m.json",
+            "display_date": "2016-09-23T04:16:20Z",
+            "media": {
+                "transcodings": [
+                    {
+                        "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:284238939/e50c61ec-476c-41ab-bf02-78db71be1f31/stream/hls",
+                        "preset": "mp3_0_0",
+                        "duration": 72991,
+                        "snipped": false,
+                        "format": {
+                            "protocol": "hls",
+                            "mime_type": "audio/mpeg"
+                        },
+                        "quality": "sq"
+                    },
+                    {
+                        "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:284238939/e50c61ec-476c-41ab-bf02-78db71be1f31/stream/progressive",
+                        "preset": "mp3_0_0",
+                        "duration": 72991,
+                        "snipped": false,
+                        "format": {
+                            "protocol": "progressive",
+                            "mime_type": "audio/mpeg"
+                        },
+                        "quality": "sq"
+                    }
+                ]
+            },
+            "monetization_model": "NOT_APPLICABLE",
+            "policy": "ALLOW",
+            "user": {
+                "avatar_url": "https://i1.sndcdn.com/avatars-000323675675-xu5x17-large.jpg",
+                "city": "",
+                "comments_count": 12,
+                "country_code": null,
+                "created_at": "2014-08-04T01:08:58Z",
+                "creator_subscriptions": [
+                    {
+                        "product": {
+                            "id": "free"
+                        }
+                    }
+                ],
+                "creator_subscription": {
+                    "product": {
+                        "id": "free"
+                    }
+                },
+                "description": "",
+                "followers_count": 440,
+                "followings_count": 246,
+                "first_name": "",
+                "full_name": "",
+                "groups_count": 0,
+                "id": 107442489,
+                "kind": "user",
+                "last_modified": "2019-03-28T15:06:31Z",
+                "last_name": "",
+                "likes_count": 3879,
+                "playlist_likes_count": 52,
+                "permalink": "imitatively",
+                "permalink_url": "https://soundcloud.com/imitatively",
+                "playlist_count": 0,
+                "reposts_count": null,
+                "track_count": 7,
+                "uri": "https://api.soundcloud.com/users/107442489",
+                "urn": "soundcloud:users:107442489",
+                "username": "riot",
+                "verified": false,
+                "visuals": {
+                    "urn": "soundcloud:users:107442489",
+                    "enabled": true,
+                    "visuals": [
+                        {
+                            "urn": "soundcloud:visuals:13985808",
+                            "entry_time": 0,
+                            "visual_url": "https://i1.sndcdn.com/visuals-000107442489-sV12Fy-original.jpg"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "artwork_url": "https://i1.sndcdn.com/artworks-qwScsJMiHGLM-0-large.jpg",
+            "commentable": true,
+            "comment_count": 43,
+            "created_at": "2017-11-17T15:49:57Z",
+            "description": null,
+            "downloadable": false,
+            "download_count": 0,
+            "download_url": null,
+            "duration": 212733,
+            "full_duration": 212733,
+            "embeddable_by": "all",
+            "genre": "Hip Hop",
+            "has_downloads_left": true,
+            "id": 357144167,
+            "kind": "track",
+            "label_name": null,
+            "last_modified": "2018-11-28T05:02:33Z",
+            "license": "all-rights-reserved",
+            "likes_count": 61078,
+            "permalink": "mandatory-drug-test-feat-young",
+            "permalink_url": "https://soundcloud.com/moneybagg-yo/mandatory-drug-test-feat-young",
+            "playback_count": 4423844,
+            "public": true,
+            "publisher_metadata": {
+                "id": 357144167,
+                "urn": "soundcloud:tracks:357144167",
+                "artist": "Moneybagg Yo",
+                "album_title": "Fed Baby’s",
+                "contains_music": true,
+                "upc_or_ean": "00602557950458",
+                "isrc": "USUG11701371",
+                "explicit": true,
+                "c_line": " © 2017 N-Less Entertainment, LLC distributed by Interscope Records",
+                "c_line_for_display": "© 2017 N-Less Entertainment, LLC distributed by Interscope Records",
+                "release_title": "Mandatory Drug Test (feat. Young Thug)"
+            },
+            "purchase_title": null,
+            "purchase_url": null,
+            "release_date": "2017-11-17T00:00:00Z",
+            "reposts_count": 2277,
+            "secret_token": null,
+            "sharing": "public",
+            "state": "finished",
+            "streamable": true,
+            "tag_list": "",
+            "title": "Mandatory Drug Test (feat. Young Thug)",
+            "uri": "https://api.soundcloud.com/tracks/357144167",
+            "urn": "soundcloud:tracks:357144167",
+            "user_id": 207004838,
+            "visuals": null,
+            "waveform_url": "https://wave.sndcdn.com/ZwRGSKhaxKnz_m.json",
+            "display_date": "2017-11-17T00:00:00Z",
+            "media": {
+                "transcodings": [
+                    {
+                        "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:357144167/bb2b00aa-ff30-4ed3-9c09-83189b4d4958/stream/hls",
+                        "preset": "mp3_0_0",
+                        "duration": 212733,
+                        "snipped": false,
+                        "format": {
+                            "protocol": "hls",
+                            "mime_type": "audio/mpeg"
+                        },
+                        "quality": "sq"
+                    },
+                    {
+                        "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:357144167/bb2b00aa-ff30-4ed3-9c09-83189b4d4958/stream/progressive",
+                        "preset": "mp3_0_0",
+                        "duration": 212733,
+                        "snipped": false,
+                        "format": {
+                            "protocol": "progressive",
+                            "mime_type": "audio/mpeg"
+                        },
+                        "quality": "sq"
+                    },
+                    {
+                        "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:357144167/d2626c48-2a76-4339-b5d4-bed7b418d450/stream/hls",
+                        "preset": "opus_0_0",
+                        "duration": 212733,
+                        "snipped": false,
+                        "format": {
+                            "protocol": "hls",
+                            "mime_type": "audio/ogg; codecs=\"opus\""
+                        },
+                        "quality": "sq"
+                    }
+                ]
+            },
+            "monetization_model": "NOT_APPLICABLE",
+            "policy": "ALLOW",
+            "user": {
+                "avatar_url": "https://i1.sndcdn.com/avatars-000482853594-vjc4ad-large.jpg",
+                "city": "Memphis",
+                "comments_count": 1,
+                "country_code": null,
+                "created_at": "2016-02-19T04:18:07Z",
+                "creator_subscriptions": [
+                    {
+                        "product": {
+                            "id": "creator-pro-unlimited"
+                        }
+                    }
+                ],
+                "creator_subscription": {
+                    "product": {
+                        "id": "creator-pro-unlimited"
+                    }
+                },
+                "description": "For Booking & Features Contact (917)528-6923 -or Email: NlessENT50@gmail.com",
+                "followers_count": 140933,
+                "followings_count": 2,
+                "first_name": "MoneyBagg",
+                "full_name": "MoneyBagg Yo",
+                "groups_count": 0,
+                "id": 207004838,
+                "kind": "user",
+                "last_modified": "2019-04-02T08:53:13Z",
+                "last_name": "Yo",
+                "likes_count": 2,
+                "playlist_likes_count": 1,
+                "permalink": "moneybagg-yo",
+                "permalink_url": "https://soundcloud.com/moneybagg-yo",
+                "playlist_count": 15,
+                "reposts_count": null,
+                "track_count": 199,
+                "uri": "https://api.soundcloud.com/users/207004838",
+                "urn": "soundcloud:users:207004838",
+                "username": "MoneyBagg Yo",
+                "verified": false,
+                "visuals": {
+                    "urn": "soundcloud:users:207004838",
+                    "enabled": true,
+                    "visuals": [
+                        {
+                            "urn": "soundcloud:visuals:51988431",
+                            "entry_time": 0,
+                            "visual_url": "https://i1.sndcdn.com/visuals-000207004838-QcJwXJ-original.jpg"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "artwork_url": "https://i1.sndcdn.com/artworks-000152258645-nzpdoy-large.jpg",
+            "commentable": true,
+            "comment_count": 201,
+            "created_at": "2016-03-20T01:10:44Z",
+            "description": "judgment Day : apocalypse \n\n\n\ncoming soon",
+            "downloadable": false,
+            "download_count": 0,
+            "download_url": null,
+            "duration": 132296,
+            "full_duration": 132296,
+            "embeddable_by": "all",
+            "genre": "",
+            "has_downloads_left": true,
+            "id": 253341957,
+            "kind": "track",
+            "label_name": null,
+            "last_modified": "2019-04-09T14:58:49Z",
+            "license": "all-rights-reserved",
+            "likes_count": 60942,
+            "permalink": "dont-test-me-pussy-boi-prodby-kendrick",
+            "permalink_url": "https://soundcloud.com/ramirez_187/dont-test-me-pussy-boi-prodby-kendrick",
+            "playback_count": 4318860,
+            "public": true,
+            "publisher_metadata": {
+                "id": 253341957,
+                "urn": "soundcloud:tracks:253341957",
+                "artist": "Ramirez",
+                "contains_music": true,
+                "publisher": "RAMIREZ",
+                "isrc": "USUYG1101245",
+                "explicit": true,
+                "writer_composer": "Ramirez"
+            },
+            "purchase_title": null,
+            "purchase_url": null,
+            "release_date": null,
+            "reposts_count": 6207,
+            "secret_token": null,
+            "sharing": "public",
+            "state": "finished",
+            "streamable": true,
+            "tag_list": "GREYFIVENINE",
+            "title": "DONT TEST ME(PUSSY BOI) [Prod.By Kendrick]",
+            "uri": "https://api.soundcloud.com/tracks/253341957",
+            "urn": "soundcloud:tracks:253341957",
+            "user_id": 16339994,
+            "visuals": null,
+            "waveform_url": "https://wave.sndcdn.com/FAmS81CSC2rZ_m.json",
+            "display_date": "2016-03-20T01:10:44Z",
+            "media": {
+                "transcodings": [
+                    {
+                        "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:253341957/52ae15b2-044f-4039-8dbd-5ab100dd803f/stream/hls",
+                        "preset": "mp3_0_0",
+                        "duration": 132296,
+                        "snipped": false,
+                        "format": {
+                            "protocol": "hls",
+                            "mime_type": "audio/mpeg"
+                        },
+                        "quality": "sq"
+                    },
+                    {
+                        "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:253341957/52ae15b2-044f-4039-8dbd-5ab100dd803f/stream/progressive",
+                        "preset": "mp3_0_0",
+                        "duration": 132296,
+                        "snipped": false,
+                        "format": {
+                            "protocol": "progressive",
+                            "mime_type": "audio/mpeg"
+                        },
+                        "quality": "sq"
+                    },
+                    {
+                        "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:253341957/493ad3ce-f70f-4cd5-81b9-a278fec48709/stream/hls",
+                        "preset": "opus_0_0",
+                        "duration": 132296,
+                        "snipped": false,
+                        "format": {
+                            "protocol": "hls",
+                            "mime_type": "audio/ogg; codecs=\"opus\""
+                        },
+                        "quality": "sq"
+                    }
+                ]
+            },
+            "monetization_model": "NOT_APPLICABLE",
+            "policy": "ALLOW",
+            "user": {
+                "avatar_url": "https://i1.sndcdn.com/avatars-000077583942-uxkgh9-large.jpg",
+                "city": "California ",
+                "comments_count": 131,
+                "country_code": "US",
+                "created_at": "2012-05-04T08:02:35Z",
+                "creator_subscriptions": [
+                    {
+                        "product": {
+                            "id": "creator-pro"
+                        }
+                    }
+                ],
+                "creator_subscription": {
+                    "product": {
+                        "id": "creator-pro"
+                    }
+                },
+                "description": "The Silver Back Gorilla aka Lil Homewrecker | GREY*59 | G.O.D.S , Booking : management@allbut6talent.com",
+                "followers_count": 161428,
+                "followings_count": 20,
+                "first_name": "RAMIREZ",
+                "full_name": "RAMIREZ RVMIRXZ",
+                "groups_count": 0,
+                "id": 16339994,
+                "kind": "user",
+                "last_modified": "2019-04-02T09:09:23Z",
+                "last_name": "RVMIRXZ",
+                "likes_count": 367,
+                "playlist_likes_count": 1,
+                "permalink": "ramirez_187",
+                "permalink_url": "https://soundcloud.com/ramirez_187",
+                "playlist_count": 6,
+                "reposts_count": null,
+                "track_count": 89,
+                "uri": "https://api.soundcloud.com/users/16339994",
+                "urn": "soundcloud:users:16339994",
+                "username": "RAMIREZ.",
+                "verified": false,
+                "visuals": {
+                    "urn": "soundcloud:users:16339994",
+                    "enabled": true,
+                    "visuals": [
+                        {
+                            "urn": "soundcloud:visuals:27264449",
+                            "entry_time": 0,
+                            "visual_url": "https://i1.sndcdn.com/visuals-000016339994-O2yedU-original.jpg"
+                        }
+                    ]
+                }
+            }
+        }
+    ],
+    "total_results": 576005,
+    "next_href": "https://api-v2.soundcloud.com/search/tracks?q=test&offset=5&query_urn=soundcloud%3Asearch%3A827ce07608ad4530919f069bc5032ce4&limit=5",
+    "query_urn": "soundcloud:search:827ce07608ad4530919f069bc5032ce4"
+}

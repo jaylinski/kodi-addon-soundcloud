@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.audio.soundcloud" name="SoundCloud" version="3.0.0" provider-name="jaylinski">
+    <requires>
+        <import addon="xbmc.python" version="2.25.0"/>
+        <import addon="script.module.future" version="0.16.0"/>
+        <import addon="script.module.requests" version="2.4.3"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="addon.py">
+        <provides>audio</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="bg">SoundCloud е платформа за разпространяване на аудио.</summary>
+        <summary lang="de">Soundcloud ist ein Online-Audio-Vertriebsplattform.</summary>
+		<summary lang="en">SoundCloud is an online audio distribution platform.</summary>
+		<summary lang="fr">SoundCloud est une plateforme de streaming audio en ligne.</summary>
+		<summary lang="he">סאונדקלאוד הוא פלטפורמת הפצת אודיו באינטרנט.</summary>
+		<summary lang="nl">SoundCloud is een online audio distributie platform.</summary>
+        <description lang="de">Soundcloud ist ein Online-Audio-Vertriebsplattform. Benutzer können ihre ursprünglich erstelle Music hochladen, aufnehmen und unter weiteren Benutzern teilen.</description>
+		<description lang="bg">SoundCloud е платформа за разпространение на аудио, която позволява на потребителите да качват, записват, представят и споделят звуците създадени от тях.</description>
+		<description lang="en">SoundCloud is an online audio distribution platform that enables its users to upload, record, promote and share their originally-created sounds.</description>
+		<description lang="fr">SoundCloud est une plateforme de streaming audio en ligne qui permet aux utilisateurs d'envoyer, d'enregistrer, de promouvoir et partager leurs créations audio originales.</description>
+		<description lang="he">סאונדקלאוד הוא פלטפורמה הפצת אודיו מקוונת המאפשרת למשתמשים שלה להעלות, להקליט, לקדם ולשתף את היצירות שלהם.</description>
+		<description lang="nl">SoundCloud is een online audio distributie platform dat gebruikers in staat stelt om hun eigen muziekcreaties te uploaden, opnemen, promoten en te delen.</description>
+        <language></language>
+        <platform>all</platform>
+        <license>MIT</license>
+        <forum>http://forum.kodi.tv/showthread.php?tid=206635</forum>
+        <website>https://www.soundcloud.com</website>
+        <email>jakob.linskeseder+kodi@gmail.com</email>
+        <source>https://github.com/jaylinski/kodi-addon-soundcloud</source>
+        <disclaimer></disclaimer>
+        <news>3.0.0 (2019-0x-xx)
+[new] complete rewrite
+[new] python 3.6 compatibility
+[fix] use new SoundCloud API
+
+2.0.6 (2016-09-08)
+[fix] Cover (thumbs) missing (done by SLiX, bromix still 'afk')
+
+2.0.5 (2015-12-07)
+[add] Bulgarian (thx 2 NEOhidra)
+[upd] addon.xml (thx 2 NEOhidra)
+
+2.0.4 (2015-12-02)
+[add] Dutch (thx 2 steefdw)
+
+2.0.3 (2015-09-20)
+[add] Hebrew (thx 2 smoky-jr)
+[fix] skip incomplete items (bug of SoundCloud)
+[fix] login
+
+2.0.2 (2015-08-31)
+[fix] add missing fanart
+
+2.0.1 (2015-08-27)
+[add] French (thx 2 Soullivaneuh)
+[upd] moved to *.po files
+[upd] Framework
+
+2.0.0 (2015-08-01)
+[upd] framework
+
+1.2.1 (2015-05-17)
+[upd] resized fanart for better support of visualization
+[upd] kodion
+
+1.2.0 (2015-05-09)
+[add] dark fanart to work better with visualizations
+[upd] kodion
+[fix] exception while using regex for the next page cursor
+
+1.1.2 (2015-02-27)
+[add] Recommended Tracks (via context menu of a track)
+[add] setting for items per page
+[fix] encoding trouble
+
+1.1.1 (2015-01-25)
+[upd] dropped dependency of 'requests'-module because of performance issues
+
+1.1.0 (2015-01-14)
+[add] Setup-Wizard
+[add] 'Go to [ARTIST]' via context menu
+[upd] dropped support for Frodo. At least Gotham 13.2
+[upd] set content type and override view
+[upd] kodion
+
+1.0.2 (2014-11-29)
+[fix] disable verification warnings
+[fix] login got lost
+
+1.0.1 (2014-11-27)
+[fix] support '/extrafanart/'
+[fix] use correct IDs for kodion settings
+[upd] improved performance
+[upd] kodion tests
+
+1.0.0 (2014-10-29)
+[fix] client was always requesting a new token
+[upd] using AccessManager of Kodimon
+[upd] removed 'requests' in favor of 'script.module.requests'
+[fix] possible crash while accessing non existing folders
+[add] pagination for stream, playlists, likes, etc.
+[fix] playlist, likes, follower and following are working again
+[upd] moved user profile to root
+[add] 'follow' and 'unfollow'
+[add] 'like' and 'unlike'
+[fix] requesting a new access token after password or username have changed
+[upd] code cleaning
+[add] support for playlists, likes, follower, following
+[add] login for stream (testing)
+[add] 'explore' for trending and genres (finished)
+[add] playback of track items
+[add] support for track items
+[add] search for tests
+        </news>
+        <assets>
+            <icon>resources/icon.png</icon>
+        </assets>
+    </extension>
+</addon>

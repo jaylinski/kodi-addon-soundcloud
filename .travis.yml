@@ -1,0 +1,13 @@
+language: python
+matrix:
+  include:
+    - python: "2.7"
+    - python: "3.6"
+  allow_failures:
+    - python: "nightly"
+
+install:
+  - pip install pipenv
+  - pipenv install
+
+script: pipenv run test

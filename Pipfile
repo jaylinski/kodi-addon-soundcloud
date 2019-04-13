@@ -1,0 +1,19 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+pycodestyle = "*"
+
+[packages]
+requests = "*"
+future = "*"
+
+[requires]
+python_version = "2.7"
+
+[scripts]
+build = "python scripts/build.py"
+lint = "pycodestyle --max-line-length=99 --statistics resources"
+test = "python -m unittest discover"
