@@ -16,16 +16,58 @@ msgstr ""
 "Language: en\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-# Settings
+# Settings - General
 msgctxt "#30001"
-msgid "Debug"
+msgid "General"
 msgstr ""
 
-# GUI
+msgctxt "#30002"
+msgid "Items per page"
+msgstr ""
+
+msgctxt "#30003"
+msgid "Search History Size"
+msgstr ""
+
+msgctxt "#30004"
+msgid "Audio format"
+msgstr ""
+
+# GUI - Root
 msgctxt "#30101"
 msgid "Search"
-msgstr "Search"
+msgstr ""
 
 msgctxt "#30102"
-msgid "More"
-msgstr "More"
+msgid "Discover"
+msgstr ""
+
+msgctxt "#30108"
+msgid "Settings"
+msgstr ""
+
+msgctxt "#30109"
+msgid "Sign in"
+msgstr ""
+
+# GUI - Search
+msgctxt "#30201"
+msgid "New search"
+msgstr ""
+
+msgctxt "#30211"
+msgid "People"
+msgstr ""
+
+msgctxt "#30212"
+msgid "Albums"
+msgstr ""
+
+msgctxt "#30213"
+msgid "Playlists"
+msgstr ""
+
+# GUI - Generic
+msgctxt "#30901"
+msgid "Next page"
+msgstr ""

@@ -1,3 +1,3 @@
-from resources.lib import plugin
+from resources import plugin
 
 plugin.run()
