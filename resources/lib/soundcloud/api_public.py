@@ -6,10 +6,18 @@ class ApiPublic(ApiInterface):
     """This class uses the official SoundCloud API."""
 
     api_host = "https://api.soundcloud.com/"
-    api_client_id = ""
 
     def _do_request(self, path, payload):
         return requests.get(self.api_host + path, params=payload).json()
 
-    def search(self, query):
+    def search(self, query, kind):
+        pass
+
+    def call(self, url):
+        pass
+
+    def discover(self):
+        pass
+
+    def resolve_url(self, url):
         pass
