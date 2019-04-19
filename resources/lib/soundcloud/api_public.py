@@ -16,8 +16,14 @@ class ApiPublic(ApiInterface):
     def call(self, url):
         pass
 
-    def discover(self):
+    def discover(self, selection):
+        pass
+
+    def resolve_id(self, id):
         pass
 
     def resolve_url(self, url):
+        pass
+
+    def resolve_media_url(self, url):
         pass

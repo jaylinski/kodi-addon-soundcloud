@@ -14,19 +14,17 @@ This [Kodi](https://github.com/xbmc/xbmc) Add-on provides a minimal interface fo
 
 Documentation of the **public** interface.
 
-### plugin://plugin.audio.soundcloud/play/?[track=\<int\>|playlist=\<int\>|url=\<string\>]
+### plugin://plugin.audio.soundcloud/play/?[track_id|playlist_id|url]
 
 Examples:
 
-* `plugin://plugin.audio.soundcloud/play/?track=1`
-* `plugin://plugin.audio.soundcloud/play/?playlist=1`
+* `plugin://plugin.audio.soundcloud/play/?track_id=1`
+* `plugin://plugin.audio.soundcloud/play/?playlist_id=1`
 * `plugin://plugin.audio.soundcloud/play/?url=https%3A//soundcloud.com/kingtheta/sets/getting-over-it`
 
 Legacy (will be removed in v4.0):
 
-* `plugin://plugin.audio.soundcloud/play/?audio_id=1` Use `track=1` instead.
-* `plugin://plugin.audio.soundcloud/play/?track_id=1` Use `track=1` instead.
-* `plugin://plugin.audio.soundcloud/play/?playlist_id=1` Use `playlist=1` instead.
+* `plugin://plugin.audio.soundcloud/play/?audio_id=1` Use `track_id=1` instead.
 
 ## Development
 
@@ -53,6 +51,7 @@ Run `pipenv run test`.
 ## Roadmap
 
 * Check for correct charsets (UTF-8)
+* Resolve TODOs
 * Re-implement all features from original add-on
 
 ## Attributions

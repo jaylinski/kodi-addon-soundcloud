@@ -1,0 +1,30 @@
+[
+    {
+        "url": "https://api-v2.soundcloud.com/selections?client_id=FweeGBOOEOYJWLJN3oEyToGLKhmSz0I7",
+        "mock": "api_v2_discover.json"
+    },
+    {
+        "url": "https://api-v2.soundcloud.com/resolve?url=https://soundcloud.com/thomashayden/universe&client_id=FweeGBOOEOYJWLJN3oEyToGLKhmSz0I7",
+        "mock": "api_v2_resolve_track.json"
+    },
+    {
+        "url": "",
+        "mock": "api_v2_search_albums.json"
+    },
+    {
+        "url": "",
+        "mock": "api_v2_search_playlists_without_albums.json"
+    },
+    {
+        "url": "",
+        "mock": "api_v2_search_tracks.json"
+    },
+    {
+        "url": "",
+        "mock": "api_v2_search_users.json"
+    },
+    {
+        "url": "https://api-v2.soundcloud.com/tracks?ids=273627408%2C275415237%2C276346372&client_id=FweeGBOOEOYJWLJN3oEyToGLKhmSz0I7",
+        "mock": "api_v2_tracks.json"
+    }
+]

@@ -13,4 +13,10 @@ class ApiInterface(with_metaclass(ABCMeta)):
     def discover(self, selection): pass
 
     @abstractmethod
+    def resolve_id(self, id): pass
+
+    @abstractmethod
     def resolve_url(self, url): pass
+
+    @abstractmethod
+    def resolve_media_url(self, url): pass

@@ -28,9 +28,7 @@ def run():
     xbmcplugin.setContent(handle, 'songs')
 
     # TODO Remove debug output
-    xbmc.log(sys.argv[0])
-    xbmc.log(sys.argv[1])
-    xbmc.log(sys.argv[2])
+    xbmc.log(str(sys.argv))
     xbmc.log(addon_base)
     xbmc.log(path)
 
@@ -41,7 +39,7 @@ def run():
             xbmcplugin.addDirectoryItems(handle, items, len(items))
             xbmcplugin.endOfDirectory(handle)
         elif "call" in action:
-            xbmc.log("url: " + args.get("call")[0], xbmc.LOGINFO)
+            xbmc.log("plugin.audio.soundcloud::call()  " + args.get("call")[0], xbmc.LOGINFO)
             collection = listItems.from_collection(api.call(args.get("call")[0]))
             xbmcplugin.addDirectoryItems(handle, collection, len(collection))
             xbmcplugin.endOfDirectory(handle)
@@ -58,33 +56,36 @@ def run():
 
     elif path == PATH_PLAY:
         # Public params
-        track_id = args.get("track", [None])[0]
-        playlist_id = args.get("playlist", [None])[0]
+        track_id = args.get("track_id", [None])[0]
+        playlist_id = args.get("playlist_id", [None])[0]
         url = args.get("url", [None])[0]
 
         # Public legacy params (deprecated)
         audio_id_legacy = args.get("audio_id", [None])[0]
         track_id = audio_id_legacy if audio_id_legacy else track_id
 
-        track_id_legacy = args.get("track_id", [None])[0]
-        track_id = track_id_legacy if track_id_legacy else track_id
-
-        playlist_id_legacy = args.get("playlist_id", [None])[0]
-        playlist_id = playlist_id_legacy if playlist_id_legacy else playlist_id
-
         # Private params
         media_url = args.get("media_url", [None])[0]
 
         if media_url:
-            resolved_url = api.resolve_url(media_url)
+            resolved_url = api.resolve_media_url(media_url)
             item = xbmcgui.ListItem(path=resolved_url)
             xbmcplugin.setResolvedUrl(handle, succeeded=True, listitem=item)
         elif track_id:
-            xbmc.log("Not implemented", xbmc.LOGERROR)
+            collection = listItems.from_collection(api.resolve_id(track_id))
+            playlist = xbmc.PlayList(xbmc.PLAYLIST_MUSIC)
+            playlist.add(url=collection[0][0], listitem=collection[0][1])
         elif playlist_id:
-            xbmc.log("Not implemented", xbmc.LOGERROR)
+            call = "/playlists/{id}".format(id=playlist_id)
+            collection = listItems.from_collection(api.call(call))
+            playlist = xbmc.PlayList(xbmc.PLAYLIST_MUSIC)
+            for item in collection:
+                playlist.add(url=item[0], listitem=item[1])
         elif url:
-            xbmc.log("Not implemented", xbmc.LOGERROR)
+            collection = listItems.from_collection(api.resolve_url(url))
+            playlist = xbmc.PlayList(xbmc.PLAYLIST_MUSIC)
+            for item in collection:
+                playlist.add(url=item[0], listitem=item[1])
         else:
             xbmc.log("Invalid play param", xbmc.LOGERROR)
 

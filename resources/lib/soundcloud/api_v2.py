@@ -44,7 +44,15 @@ class ApiV2(ApiInterface):
         res = self._do_request(url.path, urllib.parse.parse_qs(url.query))
         return self._map_json_to_collection(res)
 
+    def resolve_id(self, id):
+        res = self._do_request("/tracks", {"ids": id})
+        return self._map_json_to_collection({"collection": res})
+
     def resolve_url(self, url):
+        res = self._do_request("/resolve", {"url": url})
+        return self._map_json_to_collection(res)
+
+    def resolve_media_url(self, url):
         url = urllib.parse.urlparse(url)
         res = self._do_request(url.path, urllib.parse.parse_qs(url.query))
         return res.get("url")
@@ -70,16 +78,23 @@ class ApiV2(ApiInterface):
         logging.warning("Could not find a matching codec, falling back to first value...")
         return transcodings[0]["url"]
 
-    def _map_json_to_collection(self, json_obj):
+    def _map_json_to_collection(self, json):
         collection = ApiCollection()
-        collection.next = json_obj.get("next_href", None)
+        collection.next = json.get("next_href", None)
 
-        if "collection" in json_obj:
+        if "kind" in json and json["kind"] == "track":
+            # If we are dealing with a single track, pack it into a dict
+            json = {"collection": [json]}
 
-            for item in json_obj["collection"]:
+        if "collection" in json:
+
+            for item in json["collection"]:
                 kind = item.get("kind", None)
 
                 if kind == "track":
+                    # TODO Check for country blocks. (policy: "BLOCK", no media transcodings)
+                    # Example blocked in Austria:
+                    # https://api-v2.soundcloud.com/playlists/327013762?client_id=FweeGBOOEOYJWLJN3oEyToGLKhmSz0I7
                     if type(item.get("publisher_metadata")) is dict:
                         artist = item["publisher_metadata"].get("artist", item["user"]["username"])
                     else:
@@ -122,7 +137,8 @@ class ApiV2(ApiInterface):
                     }
                     collection.items.append(playlist)
 
-                elif kind == "selection" and "playlists" in item:  # TODO Implement system playlists
+                # TODO Implement system playlists
+                elif kind == "selection" and "playlists" in item:
                     selection = Selection()
                     selection.id = item["id"]
                     selection.label = item.get("title")
@@ -132,18 +148,19 @@ class ApiV2(ApiInterface):
                 else:
                     logging.warning("Could not convert JSON kind to model...")
 
-        elif "tracks" in json_obj:
+        elif "tracks" in json:
 
-            artist = json_obj["user"]["username"]
+            artist = json["user"]["username"]
 
-            for item in json_obj["tracks"]:
-                if "title" not in item:  # TODO Only the first 5 items are fully returned from the API.
+            for item in json["tracks"]:
+                if "title" not in item:
+                    # TODO Only the first 5 items are fully returned from the API.
                     break
 
                 track = Track()
                 track.id = item["id"]
                 track.label = item["title"]
-                track.label2 = json_obj["title"]
+                track.label2 = json["title"]
                 track.thumb = item.get("artwork_url", None)
                 track.media = self._extract_media_url(item["media"]["transcodings"])
                 track.info = {
