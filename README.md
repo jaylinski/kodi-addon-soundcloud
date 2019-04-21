@@ -2,7 +2,8 @@
 
 <img align="right" src="https://github.com/xbmc/xbmc/raw/master/addons/webinterface.default/icon-128.png" alt="Kodi logo">
 
-![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/jaylinski/kodi-addon-soundcloud.svg)
+<a href="https://github.com/jaylinski/kodi-addon-soundcloud/releases"><img alt="GitHub tag (latest SemVer)" src="https://img.shields.io/github/tag/jaylinski/kodi-addon-soundcloud.svg"></a>
+<a href="http://forum.kodi.tv/showthread.php?tid=206635"><img alt="Link to Kodi forum" src="https://img.shields.io/badge/Kodi-Forum-informational.svg"></a>
 
 This [Kodi](https://github.com/xbmc/xbmc) Add-on provides a minimal interface for SoundCloud.
 
