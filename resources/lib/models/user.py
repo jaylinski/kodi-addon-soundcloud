@@ -16,7 +16,6 @@ class User(ListItem):
         list_item.setInfo("music", {
             "title": self.info.get("description")
         })
-        list_item.setIsFolder(True)
         url = addon_base + "/?" + urllib.parse.urlencode({
             "action": "call",
             "call": "https://api-v2.soundcloud.com/users/{id}/spotlight".format(id=self.id)

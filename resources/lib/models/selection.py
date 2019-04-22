@@ -15,7 +15,6 @@ class Selection(ListItem):
         list_item.setInfo("music", {
             "title": self.info.get("description")
         })
-        list_item.setIsFolder(True)
         url = addon_base + PATH_DISCOVER + "?" + urllib.parse.urlencode({
             "selection": self.id
         })

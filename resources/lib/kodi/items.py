@@ -18,13 +18,11 @@ class Items:
 
         # Search
         list_item = xbmcgui.ListItem(label=self.addon.getLocalizedString(30101))
-        list_item.setIsFolder(True)
         url = self.addon_base + PATH_SEARCH
         items.append((url, list_item, True))
 
         # Discover
         list_item = xbmcgui.ListItem(label=self.addon.getLocalizedString(30102))
-        list_item.setIsFolder(True)
         url = self.addon_base + PATH_DISCOVER
         items.append((url, list_item, True))
 
@@ -45,13 +43,11 @@ class Items:
 
         # New search
         list_item = xbmcgui.ListItem(label=format_bold(self.addon.getLocalizedString(30201)))
-        list_item.setIsFolder(True)
         url = self.addon_base + PATH_SEARCH + "?action=new"
         items.append((url, list_item, True))
 
         # Search history
         # list_item = xbmcgui.ListItem(label="get items from history")
-        # list_item.setIsFolder(True)
         # url = addon_base + PATH_SEARCH
         # items.append((url, list_item, True))
 
@@ -62,7 +58,6 @@ class Items:
 
         # People
         list_item = xbmcgui.ListItem(label=format_bold(self.addon.getLocalizedString(30211)))
-        list_item.setIsFolder(True)
         url = self.addon_base + PATH_SEARCH + "?" + urllib.parse.urlencode({
             "action": "people",
             "query": query
@@ -71,7 +66,6 @@ class Items:
 
         # Albums
         list_item = xbmcgui.ListItem(label=format_bold(self.addon.getLocalizedString(30212)))
-        list_item.setIsFolder(True)
         url = self.addon_base + PATH_SEARCH + "?" + urllib.parse.urlencode({
             "action": "albums",
             "query": query
@@ -80,7 +74,6 @@ class Items:
 
         # Playlists
         list_item = xbmcgui.ListItem(label=format_bold(self.addon.getLocalizedString(30213)))
-        list_item.setIsFolder(True)
         url = self.addon_base + PATH_SEARCH + "?" + urllib.parse.urlencode({
             "action": "playlists",
             "query": query
