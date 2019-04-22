@@ -19,8 +19,8 @@ This [Kodi](https://github.com/xbmc/xbmc) Add-on provides a minimal interface fo
 ## Installation
 
 * [Download the latest release](https://github.com/jaylinski/kodi-addon-soundcloud/releases) (`plugin.audio.soundcloud.zip`)
-* Copy the ZIP-file to your Kodi system
-* Open Kodi, go to Add-ons and select "Install from ZIP"
+* Copy the zip file to your Kodi system
+* Open Kodi, go to Add-ons and select "Install from zip file"
 * Select the file `plugin.audio.soundcloud.zip`
 
 ## API
