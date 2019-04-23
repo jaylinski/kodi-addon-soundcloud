@@ -1,0 +1,318 @@
+[
+    {
+        "artwork_url": "https://i1.sndcdn.com/artworks-000452241642-zoz2uc-large.jpg",
+        "commentable": true,
+        "comment_count": 15404,
+        "created_at": "2018-12-03T06:07:33Z",
+        "description": "can't nobody tell me nonthin",
+        "downloadable": false,
+        "download_count": 0,
+        "download_url": null,
+        "duration": 113068,
+        "full_duration": 113068,
+        "embeddable_by": "all",
+        "genre": "Country",
+        "has_downloads_left": true,
+        "id": 539018871,
+        "kind": "track",
+        "label_name": null,
+        "last_modified": "2019-04-23T18:06:25Z",
+        "license": "all-rights-reserved",
+        "likes_count": 574553,
+        "permalink": "old-town-road",
+        "permalink_url": "https://soundcloud.com/secret-service-862007284/old-town-road",
+        "playback_count": 28994663,
+        "public": true,
+        "publisher_metadata": {
+            "id": 539018871,
+            "urn": "soundcloud:tracks:539018871",
+            "artist": "Lil Nas X",
+            "album_title": "",
+            "contains_music": true,
+            "publisher": "",
+            "iswc": "",
+            "upc_or_ean": "",
+            "isrc": "USSM11901941",
+            "p_line": "",
+            "p_line_for_display": "℗ ",
+            "writer_composer": "",
+            "release_title": "Old Town Road"
+        },
+        "purchase_title": null,
+        "purchase_url": null,
+        "release_date": null,
+        "reposts_count": 15701,
+        "secret_token": null,
+        "sharing": "public",
+        "state": "finished",
+        "streamable": true,
+        "tag_list": "\"Red Dead Redemption\" \"country trap\" \"country rap\" \"hick hop\" \"i got the horses in the bag\" \"On My Tractor\" \"Trap Country\" SCFIRST",
+        "title": "Old Town Road (I Got The Horses In The Back) [Prod. YoungKio]",
+        "uri": "https://api.soundcloud.com/tracks/539018871",
+        "urn": "soundcloud:tracks:539018871",
+        "user_id": 174817271,
+        "visuals": null,
+        "waveform_url": "https://wave.sndcdn.com/LVwhPUuHa6eb_m.json",
+        "display_date": "2018-12-03T06:07:33Z",
+        "media": {
+            "transcodings": [
+                {
+                    "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:539018871/a7bab62b-f41c-4340-9a3b-18b8ee2efad0/stream/hls",
+                    "preset": "mp3_standard",
+                    "duration": 113068,
+                    "snipped": false,
+                    "format": {
+                        "protocol": "hls",
+                        "mime_type": "audio/mpeg"
+                    },
+                    "quality": "sq"
+                },
+                {
+                    "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:539018871/a7bab62b-f41c-4340-9a3b-18b8ee2efad0/stream/progressive",
+                    "preset": "mp3_standard",
+                    "duration": 113068,
+                    "snipped": false,
+                    "format": {
+                        "protocol": "progressive",
+                        "mime_type": "audio/mpeg"
+                    },
+                    "quality": "sq"
+                },
+                {
+                    "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:539018871/c5787aab-6e51-4f72-a206-c22f8f3046e1/stream/hls",
+                    "preset": "opus_0_0",
+                    "duration": 113068,
+                    "snipped": false,
+                    "format": {
+                        "protocol": "hls",
+                        "mime_type": "audio/ogg; codecs=\"opus\""
+                    },
+                    "quality": "sq"
+                }
+            ]
+        },
+        "monetization_model": "NOT_APPLICABLE",
+        "policy": "ALLOW",
+        "user": {
+            "avatar_url": "https://i1.sndcdn.com/avatars-000573286386-5vtn1c-large.jpg",
+            "first_name": "Lil Nas",
+            "full_name": "Lil Nas X",
+            "id": 174817271,
+            "kind": "user",
+            "last_modified": "2019-03-20T16:23:50Z",
+            "last_name": "X",
+            "permalink": "secret-service-862007284",
+            "permalink_url": "https://soundcloud.com/secret-service-862007284",
+            "uri": "https://api.soundcloud.com/users/174817271",
+            "urn": "soundcloud:users:174817271",
+            "username": "Lil Nas X",
+            "verified": false,
+            "city": "ATL",
+            "country_code": null
+        }
+    },
+    {
+        "artwork_url": "https://i1.sndcdn.com/artworks-000517343685-qll1u4-large.jpg",
+        "commentable": true,
+        "comment_count": 21,
+        "created_at": "2019-04-09T05:59:19Z",
+        "description": "Capital Bra ft. Summer Cem & KC Rebell - Rolex (Official Audio)",
+        "downloadable": false,
+        "download_count": 0,
+        "download_url": null,
+        "duration": 250040,
+        "full_duration": 250040,
+        "embeddable_by": "all",
+        "genre": "Hip-Hop & Rap",
+        "has_downloads_left": true,
+        "id": 603185304,
+        "kind": "track",
+        "label_name": null,
+        "last_modified": "2019-04-22T21:09:13Z",
+        "license": "all-rights-reserved",
+        "likes_count": 3668,
+        "permalink": "capital-bra-ft-summer-cem-kc-rebell-rolex-official-audio",
+        "permalink_url": "https://soundcloud.com/user-186564293/capital-bra-ft-summer-cem-kc-rebell-rolex-official-audio",
+        "playback_count": 138732,
+        "public": true,
+        "publisher_metadata": {
+            "id": 603185304,
+            "urn": "soundcloud:tracks:603185304",
+            "contains_music": true
+        },
+        "purchase_title": null,
+        "purchase_url": null,
+        "release_date": null,
+        "reposts_count": 43,
+        "secret_token": null,
+        "sharing": "public",
+        "state": "finished",
+        "streamable": true,
+        "tag_list": "\"Capital Bra\" CB6 Rolex \"Summer Cem\" \"KC Rebell\" \"Rolex Original\" \"Joker Bra\"",
+        "title": "Capital Bra ft. Summer Cem & KC Rebell - Rolex (Official Audio)",
+        "uri": "https://api.soundcloud.com/tracks/603185304",
+        "urn": "soundcloud:tracks:603185304",
+        "user_id": 498076170,
+        "visuals": null,
+        "waveform_url": "https://wave.sndcdn.com/A1v8yfwJXJ9P_m.json",
+        "display_date": "2019-04-09T05:59:19Z",
+        "media": {
+            "transcodings": [
+                {
+                    "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:603185304/ad6ffb66-655e-40b5-872d-ce4bf70e0b7c/stream/hls",
+                    "preset": "mp3_0_0",
+                    "duration": 250040,
+                    "snipped": false,
+                    "format": {
+                        "protocol": "hls",
+                        "mime_type": "audio/mpeg"
+                    },
+                    "quality": "sq"
+                },
+                {
+                    "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:603185304/ad6ffb66-655e-40b5-872d-ce4bf70e0b7c/stream/progressive",
+                    "preset": "mp3_0_0",
+                    "duration": 250040,
+                    "snipped": false,
+                    "format": {
+                        "protocol": "progressive",
+                        "mime_type": "audio/mpeg"
+                    },
+                    "quality": "sq"
+                },
+                {
+                    "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:603185304/0b5717b4-93e3-4028-81a1-adf5e9c20ef5/stream/hls",
+                    "preset": "opus_0_0",
+                    "duration": 249956,
+                    "snipped": false,
+                    "format": {
+                        "protocol": "hls",
+                        "mime_type": "audio/ogg; codecs=\"opus\""
+                    },
+                    "quality": "sq"
+                }
+            ]
+        },
+        "monetization_model": "NOT_APPLICABLE",
+        "policy": "ALLOW",
+        "user": {
+            "avatar_url": "https://i1.sndcdn.com/avatars-000570146535-p7rwmd-large.jpg",
+            "first_name": "",
+            "full_name": "",
+            "id": 498076170,
+            "kind": "user",
+            "last_modified": "2019-04-07T15:46:50Z",
+            "last_name": "",
+            "permalink": "user-186564293",
+            "permalink_url": "https://soundcloud.com/user-186564293",
+            "uri": "https://api.soundcloud.com/users/498076170",
+            "urn": "soundcloud:users:498076170",
+            "username": "GlitchTV",
+            "verified": false,
+            "city": null,
+            "country_code": null
+        }
+    },
+    {
+        "artwork_url": "https://i1.sndcdn.com/artworks-000507899424-lrg2rq-large.jpg",
+        "commentable": true,
+        "comment_count": 82,
+        "created_at": "2019-03-21T23:05:22Z",
+        "description": "",
+        "downloadable": false,
+        "download_count": 0,
+        "download_url": null,
+        "duration": 159961,
+        "full_duration": 159961,
+        "embeddable_by": "all",
+        "genre": "Hip-hop & Rap",
+        "has_downloads_left": true,
+        "id": 593822850,
+        "kind": "track",
+        "label_name": null,
+        "last_modified": "2019-04-16T10:43:05Z",
+        "license": "all-rights-reserved",
+        "likes_count": 9714,
+        "permalink": "capital-bra-cherry-lady-prod-by-jumpa",
+        "permalink_url": "https://soundcloud.com/krueger-hc/capital-bra-cherry-lady-prod-by-jumpa",
+        "playback_count": 483243,
+        "public": true,
+        "publisher_metadata": {
+            "id": 593822850,
+            "urn": "soundcloud:tracks:593822850",
+            "contains_music": true
+        },
+        "purchase_title": null,
+        "purchase_url": null,
+        "release_date": null,
+        "reposts_count": 135,
+        "secret_token": null,
+        "sharing": "public",
+        "state": "finished",
+        "streamable": true,
+        "tag_list": "",
+        "title": "CAPITAL BRA - CHERRY LADY (prod. By Jumpa)",
+        "uri": "https://api.soundcloud.com/tracks/593822850",
+        "urn": "soundcloud:tracks:593822850",
+        "user_id": 244737346,
+        "visuals": null,
+        "waveform_url": "https://wave.sndcdn.com/W9T8pegzFEfe_m.json",
+        "display_date": "2019-03-21T23:05:22Z",
+        "media": {
+            "transcodings": [
+                {
+                    "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:593822850/87df3699-29c5-4f49-9a2b-4fbfe17f3285/stream/hls",
+                    "preset": "mp3_0_0",
+                    "duration": 159961,
+                    "snipped": false,
+                    "format": {
+                        "protocol": "hls",
+                        "mime_type": "audio/mpeg"
+                    },
+                    "quality": "sq"
+                },
+                {
+                    "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:593822850/87df3699-29c5-4f49-9a2b-4fbfe17f3285/stream/progressive",
+                    "preset": "mp3_0_0",
+                    "duration": 159961,
+                    "snipped": false,
+                    "format": {
+                        "protocol": "progressive",
+                        "mime_type": "audio/mpeg"
+                    },
+                    "quality": "sq"
+                },
+                {
+                    "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:593822850/1da355db-4c71-462f-823f-71c4632bac93/stream/hls",
+                    "preset": "opus_0_0",
+                    "duration": 159877,
+                    "snipped": false,
+                    "format": {
+                        "protocol": "hls",
+                        "mime_type": "audio/ogg; codecs=\"opus\""
+                    },
+                    "quality": "sq"
+                }
+            ]
+        },
+        "monetization_model": "NOT_APPLICABLE",
+        "policy": "ALLOW",
+        "user": {
+            "avatar_url": "https://i1.sndcdn.com/avatars-000609789762-v6pu8v-large.jpg",
+            "first_name": "",
+            "full_name": "",
+            "id": 244737346,
+            "kind": "user",
+            "last_modified": "2019-04-11T22:15:05Z",
+            "last_name": "",
+            "permalink": "krueger-hc",
+            "permalink_url": "https://soundcloud.com/krueger-hc",
+            "uri": "https://api.soundcloud.com/users/244737346",
+            "urn": "soundcloud:users:244737346",
+            "username": "Capital Bra ✅",
+            "verified": false,
+            "city": null,
+            "country_code": null
+        }
+    }
+]

@@ -1,7 +1,7 @@
 import json
 import sys
-from unittest import TestCase, skip
-from unittest.mock import MagicMock, Mock
+from unittest import TestCase
+from unittest.mock import MagicMock, Mock, DEFAULT
 sys.modules['xbmcgui'] = MagicMock()
 from resources.lib.soundcloud.api_v2 import ApiV2
 
@@ -9,7 +9,16 @@ from resources.lib.soundcloud.api_v2 import ApiV2
 class ApiV2TestCase(TestCase):
     def setUp(self):
         self.settings = MagicMock()
-        self.api = ApiV2(self.settings)
+        self.api = ApiV2(self.settings, "en")
+
+    @staticmethod
+    def _side_effect_do_request(*args):
+        if args[0] == "/tracks":
+            with open("./tests/mocks/api_v2_discover_tracks.json") as f:
+                mock_data = f.read()
+            return json.loads(mock_data)
+        else:
+            return DEFAULT
 
     def test_search(self):
         with open("./tests/mocks/api_v2_search_tracks.json") as f:
@@ -19,22 +28,36 @@ class ApiV2TestCase(TestCase):
 
         res = self.api.search("foo")
 
-        self.assertEqual(res.items[0].label, "xxxtentacion & wifisfuneral Dont Test Me (Remix)")
-        self.assertEqual(res.items[0].info["artist"], "xxxtentacion")
-        self.assertEqual(res.items[0].media, "https://api-v2.soundcloud.com/media/soundcloud:tracks:244920117/a81da15e-f1ca-4fd5-a6cb-66438f5c1d0d/stream/hls")
-        self.assertEqual(res.items[1].label, "Seekae - Test & Recognise (Flume Re-work)")
-        self.assertEqual(res.items[1].info["artist"], "Flume")
-        self.assertEqual(res.items[1].media, "https://api-v2.soundcloud.com/media/soundcloud:tracks:159723640/fb94baeb-bee4-4fa8-85e8-dea8962c51b6/stream/hls")
+        self.assertEqual(res.items[0].label, "Deadmau5 - Raise Your Weapon (Noisia Remix)")
+        self.assertEqual(res.items[0].info["artist"], "NOISIA")
+        self.assertEqual(res.items[0].media, "https://api-v2.soundcloud.com/media/soundcloud:tracks:15784497/580ad806-b3ab-440f-adbe-c12a83258a37/stream/hls")
+        self.assertEqual(res.items[1].label, "Labrinth ft. Tinie Tempah - Earthquake (Noisia Remix)")
+        self.assertEqual(res.items[1].info["artist"], "NOISIA")
+        self.assertEqual(res.items[1].media, "https://api-v2.soundcloud.com/media/soundcloud:tracks:23547065/e7846551-5c8e-4b93-b4f0-f94bfa7b1275/stream/hls")
 
-    @skip("If this test runs, the test above fails...")
     def test_discover(self):
         with open("./tests/mocks/api_v2_discover.json") as f:
             mock_data = f.read()
 
         self.api._do_request = Mock(return_value=json.loads(mock_data))
+        self.api._do_request.side_effect = self._side_effect_do_request
 
+        # Level 1
         res = self.api.discover()
-
         self.assertEqual(res.items[0].label, "Chill")
         self.assertEqual(res.items[1].label, "Party")
-        self.assertEqual(res.items[2].label, "Relax")
+        self.assertEqual(res.items[2].label, "Charts: New & hot")
+        self.assertEqual(res.items[3].label, "Charts: Top 50")
+
+        # Level 2
+        res = self.api.discover("soundcloud:selections:charts-top")
+        self.assertEqual(res.items[0].label, "Top 50: All music genres")
+        self.assertEqual(res.items[1].label, "Top 50: Alternative Rock")
+        self.assertEqual(res.items[2].label, "Top 50: Ambient")
+
+        # Level 3
+        res = self.api.discover("soundcloud:system-playlists:charts-top:all-music:at")
+        self.assertEqual(res.load[0], 539018871)
+        self.assertEqual(res.load[1], 603185304)
+        self.assertEqual(res.items[0].label, "Old Town Road (I Got The Horses In The Back) [Prod. YoungKio]")
+        self.assertEqual(res.items[1].label, "Capital Bra ft. Summer Cem & KC Rebell - Rolex (Official Audio)")

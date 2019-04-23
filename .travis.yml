@@ -1,7 +1,7 @@
 language: python
+
 matrix:
   include:
-    - python: "2.7"
     - python: "3.6"
   allow_failures:
     - python: "nightly"

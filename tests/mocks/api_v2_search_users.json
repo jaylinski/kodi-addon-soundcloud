@@ -19,7 +19,7 @@
                 }
             },
             "description": "Check out our weekly @NoisiaRadio podcast.\n\nNoisia comprise Dutch producers Thijs, Nik and Martijn. Largely regarded as one of the most distinctive, powerful acts to emerge in bass music, their production techniques are referenced and praised across the entire electronic music scene. Their extensive body of work also includes the game Devil May Cry and the Foreign Beggars collaboration I Am Legion.",
-            "followers_count": 3970010,
+            "followers_count": 3969942,
             "followings_count": 87,
             "first_name": "Outer",
             "full_name": "Outer Edges",
@@ -71,7 +71,7 @@
                 }
             },
             "description": "@Noisia's weekly radio show",
-            "followers_count": 50998,
+            "followers_count": 51093,
             "followings_count": 5,
             "first_name": "Noisia ",
             "full_name": "Noisia  Radio",
@@ -145,6 +145,7 @@
             "visuals": null
         }
     ],
-    "next_href": "https://api-v2.soundcloud.com/search/users?variant_ids=&user_id=459430-468544-420809-889541&query_urn=soundcloud%3Asearch%3A4ad8fcc8777c4f2f83b56f973e3f948d&offset=20&q=noisia&facet=place&sc_a_id=da875429-0a29-43b2-a663-03a4eff1f92d&limit=20",
-    "query_urn": "soundcloud:search:4ad8fcc8777c4f2f83b56f973e3f948d"
+    "total_results": 810,
+    "next_href": "https://api-v2.soundcloud.com/search/users?q=noisia&offset=3&query_urn=soundcloud%3Asearch%3A80e1234eaae34bfaa13d5f0a0c90a712&limit=3",
+    "query_urn": "soundcloud:search:80e1234eaae34bfaa13d5f0a0c90a712"
 }

@@ -16,7 +16,7 @@ addon = xbmcaddon.Addon()
 addon_id = addon.getAddonInfo("id")
 addon_base = "plugin://" + addon_id
 settings = Settings(addon)
-api = ApiV2(settings)
+api = ApiV2(settings, xbmc.getLanguage(xbmc.ISO_639_1))
 listItems = Items(addon, addon_base)
 
 
