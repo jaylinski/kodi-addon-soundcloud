@@ -178,10 +178,13 @@ class ApiV2(ApiInterface):
         # Load unresolved tracks
         if collection.load:
             track_ids = ",".join(str(x) for x in collection.load)
-            loaded_tracks = self._do_request("/tracks", {"ids": track_ids})  # Returned tracks are not sorted
+            loaded_tracks = self._do_request("/tracks", {"ids": track_ids})
+            # Because returned tracks are not sorted, we have to manually match them
             for track_id in collection.load:
-                track = self._build_track([track for track in loaded_tracks if track["id"] == track_id][0])
-                collection.items.append(track)
+                loaded_track = [lt for lt in loaded_tracks if lt["id"] == track_id]
+                if len(loaded_track):  # Sometimes a track can not be resolved
+                    track = self._build_track(loaded_track[0])
+                    collection.items.append(track)
 
         return collection
 
