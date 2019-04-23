@@ -18,24 +18,25 @@ class ApiV2(ApiInterface):
 
     api_host = "https://api-v2.soundcloud.com"
     api_client_id = "FweeGBOOEOYJWLJN3oEyToGLKhmSz0I7"
-    api_limit = 20  # This value gets overridden in the constructor
+    api_limit = 20  # This default value gets overridden in the constructor
+    api_lang = "en"  # This default value gets overridden in the constructor
 
-    def __init__(self, settings):
+    def __init__(self, settings, lang):
         self.settings = settings
+        self.api_lang = lang
         self.api_limit = int(self.settings.get("search.items.size"))
 
     def search(self, query, kind="tracks"):
         res = self._do_request("/search/" + kind, {"q": query, "limit": self.api_limit})
         return self._map_json_to_collection(res)
 
-    def discover(self, selection=None):
+    def discover(self, selection_id=None):
+        # TODO Cache response! (Also take a look at https://soundcloud.com/charts)
         res = self._do_request("/selections", {})
 
-        if selection and "collection" in res:
-            for category in res["collection"]:
-                if category["id"] == selection:
-                    res = {"collection": category["playlists"]}
-                    break
+        if selection_id and "collection" in res:
+            res = self._find_id_in_selection(res["collection"], selection_id)
+            res = {"collection": res}
 
         return self._map_json_to_collection(res)
 
@@ -59,10 +60,11 @@ class ApiV2(ApiInterface):
 
     def _do_request(self, path, payload):
         payload["client_id"] = self.api_client_id
+        payload["app_locale"] = self.api_lang
         headers = {"Accept-Encoding": "gzip"}
 
         logging.info(
-            "Calling %s with header %s and payload %s",
+            "plugin.audio.soundcloud::ApiV2() Calling %s with header %s and payload %s",
             self.api_host + path, str(headers), str(payload)
         )
 
@@ -75,11 +77,28 @@ class ApiV2(ApiInterface):
                 return codec["url"]
 
         # Fallback
-        logging.warning("Could not find a matching codec, falling back to first value...")
+        logging.warning("plugin.audio.soundcloud::ApiV2() "
+                        "Could not find a matching codec, falling back to first value...")
         return transcodings[0]["url"]
+
+    def _find_id_in_selection(self, selection, selection_id):
+        for category in selection:
+            if category["id"] == selection_id:
+                if "playlists" in category:
+                    return category["playlists"]
+                elif "system_playlists" in category:
+                    return category["system_playlists"]
+                elif "tracks" in category:
+                    return category["tracks"]
+            elif "system_playlists" in category:
+                res = self._find_id_in_selection(category["system_playlists"], selection_id)
+                if res:
+                    return res
 
     def _map_json_to_collection(self, json):
         collection = ApiCollection()
+        collection.items = []  # Reset list in order to resolve problems in unit tests.
+        collection.load = []
         collection.next = json.get("next_href", None)
 
         if "kind" in json and json["kind"] == "track":
@@ -92,26 +111,12 @@ class ApiV2(ApiInterface):
                 kind = item.get("kind", None)
 
                 if kind == "track":
-                    # TODO Check for country blocks. (policy: "BLOCK", no media transcodings)
-                    # Example blocked in Austria:
-                    # https://api-v2.soundcloud.com/playlists/327013762?client_id=FweeGBOOEOYJWLJN3oEyToGLKhmSz0I7
-                    if type(item.get("publisher_metadata")) is dict:
-                        artist = item["publisher_metadata"].get("artist", item["user"]["username"])
-                    else:
-                        artist = item["user"]["username"]
+                    if "title" not in item:
+                        # Track not fully returned by API
+                        collection.load.append(item["id"])
+                        continue
 
-                    track = Track()
-                    track.id = item["id"]
-                    track.label = item["title"]
-                    track.thumb = item.get("artwork_url", None)
-                    track.media = self._extract_media_url(item["media"]["transcodings"])
-                    track.info = {
-                        "artist": artist,
-                        "genre": item.get("genre", None),
-                        "date": item.get("display_date", None),
-                        "description": item.get("description", None),
-                        "duration": int(item["duration"]) / 1000
-                    }
+                    track = self._build_track(item)
                     collection.items.append(track)
 
                 elif kind == "user":
@@ -137,8 +142,14 @@ class ApiV2(ApiInterface):
                     }
                     collection.items.append(playlist)
 
-                # TODO Implement system playlists
-                elif kind == "selection" and "playlists" in item:
+                elif kind == "system-playlist":
+                    playlist = Selection()  # System playlists only appear inside selections
+                    playlist.id = item["id"]
+                    playlist.label = item.get("title")
+                    playlist.thumb = item.get("calculated_artwork_url", None)
+                    collection.items.append(playlist)
+
+                elif kind == "selection":
                     selection = Selection()
                     selection.id = item["id"]
                     selection.label = item.get("title")
@@ -146,36 +157,58 @@ class ApiV2(ApiInterface):
                     collection.items.append(selection)
 
                 else:
-                    logging.warning("Could not convert JSON kind to model...")
+                    logging.warning("plugin.audio.soundcloud::ApiV2() "
+                                    "Could not convert JSON kind to model...")
 
         elif "tracks" in json:
 
-            artist = json["user"]["username"]
-
             for item in json["tracks"]:
                 if "title" not in item:
-                    # TODO Only the first 5 items are fully returned from the API.
-                    break
+                    # Track not fully returned by API
+                    collection.load.append(item["id"])
+                    continue
 
-                track = Track()
-                track.id = item["id"]
-                track.label = item["title"]
+                track = self._build_track(item)
                 track.label2 = json["title"]
-                track.thumb = item.get("artwork_url", None)
-                track.media = self._extract_media_url(item["media"]["transcodings"])
-                track.info = {
-                    "artist": artist,
-                    "genre": item.get("genre", None),
-                    "date": item.get("display_date", None),
-                    "description": item.get("description", None),
-                    "duration": int(item["duration"]) / 1000
-                }
                 collection.items.append(track)
 
         else:
             raise RuntimeError("ApiV2 JSON seems to be invalid")
 
+        # Load unresolved tracks
+        if collection.load:
+            track_ids = ",".join(str(x) for x in collection.load)
+            loaded_tracks = self._do_request("/tracks", {"ids": track_ids})  # Returned tracks are not sorted
+            for track_id in collection.load:
+                track = self._build_track([track for track in loaded_tracks if track["id"] == track_id][0])
+                collection.items.append(track)
+
         return collection
+
+    def _build_track(self, item):
+        # TODO Check for country blocks. (policy: "BLOCK", no media transcodings)
+        # Example blocked in Austria:
+        # https://api-v2.soundcloud.com/playlists/327013762?client_id=FweeGBOOEOYJWLJN3oEyToGLKhmSz0I7
+
+        if type(item.get("publisher_metadata")) is dict:
+            artist = item["publisher_metadata"].get("artist", item["user"]["username"])
+        else:
+            artist = item["user"]["username"]
+
+        track = Track()
+        track.id = item["id"]
+        track.label = item["title"]
+        track.thumb = item.get("artwork_url", None)
+        track.media = self._extract_media_url(item["media"]["transcodings"])
+        track.info = {
+            "artist": artist,
+            "genre": item.get("genre", None),
+            "date": item.get("display_date", None),
+            "description": item.get("description", None),
+            "duration": int(item["duration"]) / 1000
+        }
+
+        return track
 
     @staticmethod
     def _is_preferred_codec(codec, setting):
