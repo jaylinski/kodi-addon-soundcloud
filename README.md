@@ -2,11 +2,12 @@
 
 <img align="right" src="https://github.com/xbmc/xbmc/raw/master/addons/webinterface.default/icon-128.png" alt="Kodi logo">
 
-<a href="https://github.com/jaylinski/kodi-addon-soundcloud/releases"><img alt="GitHub tag (latest SemVer)" src="https://img.shields.io/github/tag/jaylinski/kodi-addon-soundcloud.svg"></a>
-<a href="https://forum.kodi.tv/showthread.php?tid=206635"><img alt="Link to Kodi forum" src="https://img.shields.io/badge/Kodi-Forum-informational.svg"></a>
-<a href="https://kodi.wiki/view/Add-on:SoundCloud"><img alt="Link to Kodi wiki" src="https://img.shields.io/badge/Kodi-Wiki-informational.svg"></a>
-<a href="https://kodi.wiki/view/Releases"><img alt="Link to Kodi releases" src="https://img.shields.io/badge/Kodi-v18%20%22Leia%22-green.svg"></a>
-<a href="https://kodi.wiki/view/Releases"><img alt="Link to Kodi releases" src="https://img.shields.io/badge/Kodi-v17%20%22Krypton%22-green.svg"></a>
+[![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/jaylinski/kodi-addon-soundcloud.svg)](https://github.com/jaylinski/kodi-addon-soundcloud/releases)
+[![Build Status](https://travis-ci.com/jaylinski/kodi-addon-soundcloud.svg?branch=master)](https://travis-ci.com/jaylinski/kodi-addon-soundcloud)
+[![Link to Kodi forum](https://img.shields.io/badge/Kodi-Forum-informational.svg)](https://forum.kodi.tv/showthread.php?tid=206635)
+[![Link to Kodi wiki](https://img.shields.io/badge/Kodi-Wiki-informational.svg)](https://kodi.wiki/view/Add-on:SoundCloud)
+[![Link to Kodi releases](https://img.shields.io/badge/Kodi-v18%20%22Leia%22-green.svg)](https://kodi.wiki/view/Releases)
+[![Link to Kodi releases](https://img.shields.io/badge/Kodi-v17%20%22Krypton%22-green.svg)](https://kodi.wiki/view/Releases)
 
 This [Kodi](https://github.com/xbmc/xbmc) Add-on provides a minimal interface for SoundCloud.
 
