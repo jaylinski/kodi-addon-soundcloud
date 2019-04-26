@@ -65,7 +65,6 @@ Run `pipenv run test`.
 ## Roadmap
 
 * Check for correct charsets (UTF-8)
-* Resolve TODOs
 * Re-implement all features from original add-on
 
 ## Attributions
