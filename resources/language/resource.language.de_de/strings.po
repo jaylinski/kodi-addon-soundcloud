@@ -71,3 +71,7 @@ msgstr "Playlists"
 msgctxt "#30901"
 msgid "Next page"
 msgstr "Nächste Seite"
+
+msgctxt "#30902"
+msgid "Not available in your country"
+msgstr "In deinem Land nicht verfügbar"

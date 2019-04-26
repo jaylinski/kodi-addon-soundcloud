@@ -1,5 +1,5 @@
 from future import standard_library
-standard_library.install_aliases()
+standard_library.install_aliases()  # noqa: E402
 
 from resources.lib.kodi.utils import format_bold
 from resources.routes import *
@@ -9,9 +9,10 @@ import xbmcgui
 
 
 class Items:
-    def __init__(self, addon, addon_base):
+    def __init__(self, addon, addon_base, search_history):
         self.addon = addon
         self.addon_base = addon_base
+        self.search_history = search_history
 
     def root(self):
         items = []
@@ -47,9 +48,14 @@ class Items:
         items.append((url, list_item, True))
 
         # Search history
-        # list_item = xbmcgui.ListItem(label="get items from history")
-        # url = addon_base + PATH_SEARCH
-        # items.append((url, list_item, True))
+        history = self.search_history.get()
+        for k in sorted(history.keys(), reverse=True):
+            list_item = xbmcgui.ListItem(label=history[k].get("query"))
+            url = self.addon_base + PATH_SEARCH + "?" + urllib.parse.urlencode({
+                "action": "new",
+                "query": history[k].get("query")
+            })
+            items.append((url, list_item, True))
 
         return items
 

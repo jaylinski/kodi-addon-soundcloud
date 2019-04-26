@@ -34,5 +34,9 @@
     {
         "url": "https://api-v2.soundcloud.com/tracks?ids=273627408%2C275415237%2C276346372&client_id=FweeGBOOEOYJWLJN3oEyToGLKhmSz0I7",
         "mock": "api_v2_tracks.json"
+    },
+    {
+        "url": "https://api-v2.soundcloud.com/tracks?ids=321861364&client_id=FweeGBOOEOYJWLJN3oEyToGLKhmSz0I7",
+        "mock": "api_v2_tracks_blocked.json"
     }
 ]

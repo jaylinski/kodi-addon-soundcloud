@@ -1,6 +1,8 @@
 from future import standard_library
-standard_library.install_aliases()
+standard_library.install_aliases()  # noqa: E402
 
+import hashlib
+import json
 import logging
 import requests
 import urllib.parse
@@ -17,11 +19,12 @@ class ApiV2(ApiInterface):
     """This class uses the unofficial API used by the SoundCloud website."""
 
     api_host = "https://api-v2.soundcloud.com"
-    api_client_id = "FweeGBOOEOYJWLJN3oEyToGLKhmSz0I7"
+    api_client_id = "KT6UCHXC9iNnI8wn4UUfwMSlAPe4Z8zx"
     api_limit = 20  # This default value gets overridden in the constructor
     api_lang = "en"  # This default value gets overridden in the constructor
 
-    def __init__(self, settings, lang):
+    def __init__(self, settings, lang, cache):
+        self.cache = cache
         self.settings = settings
         self.api_lang = lang
         self.api_limit = int(self.settings.get("search.items.size"))
@@ -31,8 +34,7 @@ class ApiV2(ApiInterface):
         return self._map_json_to_collection(res)
 
     def discover(self, selection_id=None):
-        # TODO Cache response! (Also take a look at https://soundcloud.com/charts)
-        res = self._do_request("/selections", {})
+        res = self._do_request("/selections", {}, 360)
 
         if selection_id and "collection" in res:
             res = self._find_id_in_selection(res["collection"], selection_id)
@@ -58,17 +60,32 @@ class ApiV2(ApiInterface):
         res = self._do_request(url.path, urllib.parse.parse_qs(url.query))
         return res.get("url")
 
-    def _do_request(self, path, payload):
+    def _do_request(self, path, payload, cache=0):
         payload["client_id"] = self.api_client_id
         payload["app_locale"] = self.api_lang
         headers = {"Accept-Encoding": "gzip"}
+        path = self.api_host + path
+        cache_key = hashlib.sha1(path + str(payload)).hexdigest()
 
         logging.info(
             "plugin.audio.soundcloud::ApiV2() Calling %s with header %s and payload %s",
             self.api_host + path, str(headers), str(payload)
         )
 
-        return requests.get(self.api_host + path, headers=headers, params=payload).json()
+        # If caching is active, check for an existing cached file.
+        if cache:
+            cached_response = self.cache.get(cache_key, cache)
+            if cached_response:
+                return json.loads(cached_response)
+
+        # Send the request.
+        response = requests.get(path, headers=headers, params=payload).json()
+
+        # If caching is active, cache the response.
+        if cache:
+            self.cache.add(cache_key, json.dumps(response))
+
+        return response
 
     def _extract_media_url(self, transcodings):
         setting = self.settings.get("audio.format")
@@ -79,7 +96,7 @@ class ApiV2(ApiInterface):
         # Fallback
         logging.warning("plugin.audio.soundcloud::ApiV2() "
                         "Could not find a matching codec, falling back to first value...")
-        return transcodings[0]["url"]
+        return transcodings[0]["url"] if len(transcodings) else None
 
     def _find_id_in_selection(self, selection, selection_id):
         for category in selection:
@@ -95,19 +112,19 @@ class ApiV2(ApiInterface):
                 if res:
                     return res
 
-    def _map_json_to_collection(self, json):
+    def _map_json_to_collection(self, json_obj):
         collection = ApiCollection()
         collection.items = []  # Reset list in order to resolve problems in unit tests.
         collection.load = []
-        collection.next = json.get("next_href", None)
+        collection.next = json_obj.get("next_href", None)
 
-        if "kind" in json and json["kind"] == "track":
+        if "kind" in json_obj and json_obj["kind"] == "track":
             # If we are dealing with a single track, pack it into a dict
-            json = {"collection": [json]}
+            json_obj = {"collection": [json_obj]}
 
-        if "collection" in json:
+        if "collection" in json_obj:
 
-            for item in json["collection"]:
+            for item in json_obj["collection"]:
                 kind = item.get("kind", None)
 
                 if kind == "track":
@@ -120,9 +137,7 @@ class ApiV2(ApiInterface):
                     collection.items.append(track)
 
                 elif kind == "user":
-                    user = User()
-                    user.id = item["id"]
-                    user.label = item["username"]
+                    user = User(id=item["id"], label=item["username"])
                     user.label2 = item.get("full_name", "")
                     user.thumb = item.get("avatar_url", None)
                     user.info = {
@@ -131,10 +146,8 @@ class ApiV2(ApiInterface):
                     collection.items.append(user)
 
                 elif kind == "playlist":
-                    playlist = Playlist()
-                    playlist.id = item["id"]
+                    playlist = Playlist(id=item["id"], label=item.get("title"))
                     playlist.is_album = item.get("is_album", False)
-                    playlist.label = item.get("title")
                     playlist.label2 = item.get("label_name", "")
                     playlist.thumb = item.get("artwork_url", None)
                     playlist.info = {
@@ -143,16 +156,13 @@ class ApiV2(ApiInterface):
                     collection.items.append(playlist)
 
                 elif kind == "system-playlist":
-                    playlist = Selection()  # System playlists only appear inside selections
-                    playlist.id = item["id"]
-                    playlist.label = item.get("title")
+                    # System playlists only appear inside selections
+                    playlist = Selection(id=item["id"], label=item.get("title"))
                     playlist.thumb = item.get("calculated_artwork_url", None)
                     collection.items.append(playlist)
 
                 elif kind == "selection":
-                    selection = Selection()
-                    selection.id = item["id"]
-                    selection.label = item.get("title")
+                    selection = Selection(id=item["id"], label=item.get("title"))
                     selection.label2 = item.get("description", "")
                     collection.items.append(selection)
 
@@ -160,16 +170,16 @@ class ApiV2(ApiInterface):
                     logging.warning("plugin.audio.soundcloud::ApiV2() "
                                     "Could not convert JSON kind to model...")
 
-        elif "tracks" in json:
+        elif "tracks" in json_obj:
 
-            for item in json["tracks"]:
+            for item in json_obj["tracks"]:
                 if "title" not in item:
                     # Track not fully returned by API
                     collection.load.append(item["id"])
                     continue
 
                 track = self._build_track(item)
-                track.label2 = json["title"]
+                track.label2 = json_obj["title"]
                 collection.items.append(track)
 
         else:
@@ -182,25 +192,20 @@ class ApiV2(ApiInterface):
             # Because returned tracks are not sorted, we have to manually match them
             for track_id in collection.load:
                 loaded_track = [lt for lt in loaded_tracks if lt["id"] == track_id]
-                if len(loaded_track):  # Sometimes a track can not be resolved
+                if len(loaded_track):  # Sometimes a track cannot be resolved
                     track = self._build_track(loaded_track[0])
                     collection.items.append(track)
 
         return collection
 
     def _build_track(self, item):
-        # TODO Check for country blocks. (policy: "BLOCK", no media transcodings)
-        # Example blocked in Austria:
-        # https://api-v2.soundcloud.com/playlists/327013762?client_id=FweeGBOOEOYJWLJN3oEyToGLKhmSz0I7
-
         if type(item.get("publisher_metadata")) is dict:
             artist = item["publisher_metadata"].get("artist", item["user"]["username"])
         else:
             artist = item["user"]["username"]
 
-        track = Track()
-        track.id = item["id"]
-        track.label = item["title"]
+        track = Track(id=item["id"], label=item["title"])
+        track.blocked = True if item.get("policy") == "BLOCK" else False
         track.thumb = item.get("artwork_url", None)
         track.media = self._extract_media_url(item["media"]["transcodings"])
         track.info = {

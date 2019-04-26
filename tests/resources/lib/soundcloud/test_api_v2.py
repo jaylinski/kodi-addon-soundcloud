@@ -2,14 +2,14 @@ import json
 import sys
 from unittest import TestCase
 from unittest.mock import MagicMock, Mock, DEFAULT
+sys.modules['xbmcaddon'] = MagicMock()
 sys.modules['xbmcgui'] = MagicMock()
 from resources.lib.soundcloud.api_v2 import ApiV2
 
 
 class ApiV2TestCase(TestCase):
     def setUp(self):
-        self.settings = MagicMock()
-        self.api = ApiV2(self.settings, "en")
+        self.api = ApiV2(settings=MagicMock(), lang="en", cache=MagicMock())
 
     @staticmethod
     def _side_effect_do_request(*args):
@@ -61,3 +61,12 @@ class ApiV2TestCase(TestCase):
         self.assertEqual(res.load[1], 603185304)
         self.assertEqual(res.items[0].label, "Old Town Road (I Got The Horses In The Back) [Prod. YoungKio]")
         self.assertEqual(res.items[1].label, "Capital Bra ft. Summer Cem & KC Rebell - Rolex (Official Audio)")
+
+    def test_blocked(self):
+        with open("./tests/mocks/api_v2_tracks_blocked.json") as f:
+            mock_data = f.read()
+
+        self.api._do_request = Mock(return_value=json.loads(mock_data))
+
+        res = self.api.resolve_id("country blocks suck")
+        self.assertEqual(res.items[0].blocked, True)

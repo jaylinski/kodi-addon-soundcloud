@@ -1,9 +1,12 @@
 from future import standard_library
-standard_library.install_aliases()
+standard_library.install_aliases()  # noqa: E402
 
 from resources.lib.soundcloud.api_v2 import ApiV2
+from resources.lib.kodi.cache import Cache
 from resources.lib.kodi.items import Items
+from resources.lib.kodi.search_history import SearchHistory
 from resources.lib.kodi.settings import Settings
+from resources.lib.kodi.vfs import VFS
 from resources.routes import *
 import urllib.parse
 import sys
@@ -15,9 +18,13 @@ import xbmcplugin
 addon = xbmcaddon.Addon()
 addon_id = addon.getAddonInfo("id")
 addon_base = "plugin://" + addon_id
+vfs_addon_data = VFS(addon, "profile/addon_data")
+vfs_temp = VFS(addon, "temp")
 settings = Settings(addon)
-api = ApiV2(settings, xbmc.getLanguage(xbmc.ISO_639_1))
-listItems = Items(addon, addon_base)
+cache = Cache(settings, vfs_temp)
+api = ApiV2(settings, xbmc.getLanguage(xbmc.ISO_639_1), cache)
+search_history = SearchHistory(settings, vfs_addon_data)
+listItems = Items(addon, addon_base, search_history)
 
 
 def run():
@@ -26,11 +33,6 @@ def run():
     handle = int(sys.argv[1])
     args = urllib.parse.parse_qs(sys.argv[2][1:])
     xbmcplugin.setContent(handle, 'songs')
-
-    # TODO Remove debug output
-    xbmc.log(str(sys.argv))
-    xbmc.log(addon_base)
-    xbmc.log(path)
 
     if path == PATH_ROOT:
         action = args.get("action", None)
@@ -97,7 +99,12 @@ def run():
             xbmcplugin.addDirectoryItems(handle, items, len(items))
             xbmcplugin.endOfDirectory(handle)
         elif "new" in action:
-            search = xbmcgui.Dialog().input(addon.getLocalizedString(30101))
+            if not query:
+                search = xbmcgui.Dialog().input(addon.getLocalizedString(30101))
+                search_history.add(search)
+            else:
+                search = query
+
             search_options = listItems.search_sub(search)
             collection = listItems.from_collection(api.search(search))
             xbmcplugin.addDirectoryItems(handle, search_options, len(collection))
