@@ -1,5 +1,9 @@
 [
     {
+        "url": "https://api-v2.soundcloud.com/charts?trending=top&genre=soundcloud%3Agenres%3Aall-music&client_id=KT6UCHXC9iNnI8wn4UUfwMSlAPe4Z8zx",
+        "mock": "api_v2_charts.json"
+    },
+    {
         "url": "https://api-v2.soundcloud.com/selections?client_id=FweeGBOOEOYJWLJN3oEyToGLKhmSz0I7",
         "mock": "api_v2_discover.json"
     },

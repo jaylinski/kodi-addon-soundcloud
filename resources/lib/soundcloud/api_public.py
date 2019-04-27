@@ -13,6 +13,9 @@ class ApiPublic(ApiInterface):
     def search(self, query, kind):
         pass
 
+    def charts(self, filters):
+        pass
+
     def call(self, url):
         pass
 

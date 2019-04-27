@@ -18,8 +18,10 @@ import xbmcplugin
 addon = xbmcaddon.Addon()
 addon_id = addon.getAddonInfo("id")
 addon_base = "plugin://" + addon_id
-vfs_addon_data = VFS(addon, "profile/addon_data")
-vfs_temp = VFS(addon, "temp")
+addon_profile_path = xbmc.translatePath(addon.getAddonInfo('profile')).decode('utf-8')
+addon_temp_path = xbmc.translatePath('special://temp/%s' % addon_id).decode('utf-8')
+vfs_addon_data = VFS(addon_profile_path)
+vfs_temp = VFS(addon_temp_path)
 settings = Settings(addon)
 cache = Cache(settings, vfs_temp)
 api = ApiV2(settings, xbmc.getLanguage(xbmc.ISO_639_1), cache)
@@ -41,7 +43,6 @@ def run():
             xbmcplugin.addDirectoryItems(handle, items, len(items))
             xbmcplugin.endOfDirectory(handle)
         elif "call" in action:
-            xbmc.log("plugin.audio.soundcloud::call()  " + args.get("call")[0], xbmc.LOGINFO)
             collection = listItems.from_collection(api.call(args.get("call")[0]))
             xbmcplugin.addDirectoryItems(handle, collection, len(collection))
             xbmcplugin.endOfDirectory(handle)
@@ -49,6 +50,19 @@ def run():
             addon.openSettings()
         else:
             xbmc.log("Invalid root action", xbmc.LOGERROR)
+
+    elif path == PATH_CHARTS:
+        action = args.get("action", [None])[0]
+        genre = args.get("genre", ["soundcloud:genres:all-music"])[0]
+        if action is None:
+            items = listItems.charts()
+            xbmcplugin.addDirectoryItems(handle, items, len(items))
+            xbmcplugin.endOfDirectory(handle)
+        else:
+            api_result = api.charts({"kind": action, "genre": genre, "limit": 50})
+            collection = listItems.from_collection(api_result)
+            xbmcplugin.addDirectoryItems(handle, collection, len(collection))
+            xbmcplugin.endOfDirectory(handle)
 
     elif path == PATH_DISCOVER:
         selection = args.get("selection", [None])[0]

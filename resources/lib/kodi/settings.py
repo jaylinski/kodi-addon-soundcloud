@@ -1,4 +1,5 @@
 class Settings:
+
     AUDIO_FORMATS = {
         "0": {
             "mime_type": "audio/ogg; codecs=\"opus\"",
@@ -8,6 +9,11 @@ class Settings:
             "mime_type": "audio/mpeg",
             "protocol": "hls",
         }
+    }
+
+    APIV2_LOCALE = {
+        "auto": "0",
+        "disabled": "1"
     }
 
     def __init__(self, addon):

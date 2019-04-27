@@ -3,9 +3,9 @@ standard_library.install_aliases()  # noqa: E402
 
 import hashlib
 import json
-import logging
 import requests
 import urllib.parse
+import xbmc
 
 from resources.lib.models.playlist import Playlist
 from resources.lib.models.track import Track
@@ -20,26 +20,39 @@ class ApiV2(ApiInterface):
 
     api_host = "https://api-v2.soundcloud.com"
     api_client_id = "KT6UCHXC9iNnI8wn4UUfwMSlAPe4Z8zx"
-    api_limit = 20  # This default value gets overridden in the constructor
-    api_lang = "en"  # This default value gets overridden in the constructor
+    api_limit = 20
+    api_lang = "en"
+    api_cache = {
+        "discover": 120  # 2 hours
+    }
 
     def __init__(self, settings, lang, cache):
         self.cache = cache
         self.settings = settings
-        self.api_lang = lang
         self.api_limit = int(self.settings.get("search.items.size"))
+
+        if self.settings.get("apiv2.clientid"):
+            self.api_client_id = self.settings.get("apiv2.clientid")
+
+        if self.settings.get("apiv2.locale") == self.settings.APIV2_LOCALE["auto"]:
+            self.api_lang = lang
 
     def search(self, query, kind="tracks"):
         res = self._do_request("/search/" + kind, {"q": query, "limit": self.api_limit})
         return self._map_json_to_collection(res)
 
     def discover(self, selection_id=None):
-        res = self._do_request("/selections", {}, 360)
+        res = self._do_request("/selections", {}, self.api_cache["discover"])
 
         if selection_id and "collection" in res:
             res = self._find_id_in_selection(res["collection"], selection_id)
             res = {"collection": res}
 
+        return self._map_json_to_collection(res)
+
+    def charts(self, filters):
+        res = self._do_request("/charts", filters)
+        res = {"collection": [item["track"] for item in res["collection"]]}
         return self._map_json_to_collection(res)
 
     def call(self, url):
@@ -67,9 +80,10 @@ class ApiV2(ApiInterface):
         path = self.api_host + path
         cache_key = hashlib.sha1(path + str(payload)).hexdigest()
 
-        logging.info(
-            "plugin.audio.soundcloud::ApiV2() Calling %s with header %s and payload %s",
-            self.api_host + path, str(headers), str(payload)
+        xbmc.log(
+            "plugin.audio.soundcloud::ApiV2() Calling %s with header %s and payload %s" %
+            (path, str(headers), str(payload)),
+            xbmc.LOGDEBUG
         )
 
         # If caching is active, check for an existing cached file.
@@ -94,8 +108,6 @@ class ApiV2(ApiInterface):
                 return codec["url"]
 
         # Fallback
-        logging.warning("plugin.audio.soundcloud::ApiV2() "
-                        "Could not find a matching codec, falling back to first value...")
         return transcodings[0]["url"] if len(transcodings) else None
 
     def _find_id_in_selection(self, selection, selection_id):
@@ -167,8 +179,9 @@ class ApiV2(ApiInterface):
                     collection.items.append(selection)
 
                 else:
-                    logging.warning("plugin.audio.soundcloud::ApiV2() "
-                                    "Could not convert JSON kind to model...")
+                    xbmc.log("plugin.audio.soundcloud::ApiV2() "
+                             "Could not convert JSON kind to model...",
+                             xbmc.LOGWARNING)
 
         elif "tracks" in json_obj:
 
@@ -206,6 +219,7 @@ class ApiV2(ApiInterface):
 
         track = Track(id=item["id"], label=item["title"])
         track.blocked = True if item.get("policy") == "BLOCK" else False
+        track.preview = True if item.get("policy") == "SNIP" else False
         track.thumb = item.get("artwork_url", None)
         track.media = self._extract_media_url(item["media"]["transcodings"])
         track.info = {

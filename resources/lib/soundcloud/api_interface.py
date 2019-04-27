@@ -7,6 +7,9 @@ class ApiInterface(with_metaclass(ABCMeta)):
     def search(self, query, kind): pass
 
     @abstractmethod
+    def charts(self, filters): pass
+
+    @abstractmethod
     def call(self, url): pass
 
     @abstractmethod

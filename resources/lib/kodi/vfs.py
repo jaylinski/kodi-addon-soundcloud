@@ -1,13 +1,11 @@
 import json
 import os
-import xbmc
 import xbmcvfs
 
 
 class VFS:
-    def __init__(self, addon, folder):
-        addon_id = addon.getAddonInfo("id")
-        self.path = xbmc.translatePath('special://%s/%s' % (folder, addon_id))
+    def __init__(self, path):
+        self.path = path
         if not xbmcvfs.exists(self.path):
             xbmcvfs.mkdir(self.path)
 

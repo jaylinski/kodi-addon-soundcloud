@@ -64,8 +64,8 @@ Run `pipenv run test`.
 
 ## Roadmap
 
-* Check for correct charsets (UTF-8)
 * Re-implement all features from original add-on
+* Implement [enhancements](https://github.com/jaylinski/kodi-addon-soundcloud/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement)
 
 ## Attributions
 

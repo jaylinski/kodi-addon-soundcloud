@@ -10,7 +10,7 @@
     </extension>
     <extension point="xbmc.addon.metadata">
         <summary lang="bg">SoundCloud е платформа за разпространяване на аудио.</summary>
-        <summary lang="de">Soundcloud ist ein Online-Audio-Vertriebsplattform.</summary>
+        <summary lang="de">Soundcloud ist eine Online-Audio-Vertriebsplattform.</summary>
 		<summary lang="en">SoundCloud is an online audio distribution platform.</summary>
 		<summary lang="fr">SoundCloud est une plateforme de streaming audio en ligne.</summary>
 		<summary lang="he">סאונדקלאוד הוא פלטפורמת הפצת אודיו באינטרנט.</summary>

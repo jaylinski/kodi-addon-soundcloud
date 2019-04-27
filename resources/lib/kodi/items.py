@@ -22,8 +22,13 @@ class Items:
         url = self.addon_base + PATH_SEARCH
         items.append((url, list_item, True))
 
-        # Discover
+        # Charts
         list_item = xbmcgui.ListItem(label=self.addon.getLocalizedString(30102))
+        url = self.addon_base + PATH_CHARTS
+        items.append((url, list_item, True))
+
+        # Discover
+        list_item = xbmcgui.ListItem(label=self.addon.getLocalizedString(30103))
         url = self.addon_base + PATH_DISCOVER
         items.append((url, list_item, True))
 
@@ -83,6 +88,25 @@ class Items:
         url = self.addon_base + PATH_SEARCH + "?" + urllib.parse.urlencode({
             "action": "playlists",
             "query": query
+        })
+        items.append((url, list_item, True))
+
+        return items
+
+    def charts(self):
+        items = []
+
+        # Top 50
+        list_item = xbmcgui.ListItem(label=format_bold(self.addon.getLocalizedString(30301)))
+        url = self.addon_base + PATH_CHARTS + "?" + urllib.parse.urlencode({
+            "action": "top"
+        })
+        items.append((url, list_item, True))
+
+        # Trending
+        list_item = xbmcgui.ListItem(label=format_bold(self.addon.getLocalizedString(30302)))
+        url = self.addon_base + PATH_CHARTS + "?" + urllib.parse.urlencode({
+            "action": "trending"
         })
         items.append((url, list_item, True))
 

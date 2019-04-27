@@ -1,0 +1,553 @@
+{
+    "genre": "soundcloud:genres:all-music",
+    "kind": "trending",
+    "last_updated": "2019-04-27T06:14:19Z",
+    "collection": [
+        {
+            "track": {
+                "artwork_url": "https://i1.sndcdn.com/artworks-jUe6obh5tfOR-0-large.jpg",
+                "commentable": true,
+                "comment_count": 272,
+                "created_at": "2019-04-22T22:10:08Z",
+                "description": null,
+                "downloadable": false,
+                "download_count": 0,
+                "download_url": null,
+                "duration": 30000,
+                "full_duration": 149981,
+                "embeddable_by": "all",
+                "genre": "Hip Hop",
+                "has_downloads_left": true,
+                "id": 609930480,
+                "kind": "track",
+                "label_name": null,
+                "last_modified": "2019-04-27T21:11:51Z",
+                "license": "all-rights-reserved",
+                "likes_count": 20532,
+                "permalink": "stop-snitchin",
+                "permalink_url": "https://soundcloud.com/yg400/stop-snitchin",
+                "playback_count": 386127,
+                "public": true,
+                "publisher_metadata": {
+                    "id": 609930480,
+                    "urn": "soundcloud:tracks:609930480",
+                    "artist": "YG",
+                    "album_title": "Stop Snitchin",
+                    "contains_music": true,
+                    "upc_or_ean": "00602577846496",
+                    "isrc": "USUM71905772",
+                    "explicit": true,
+                    "p_line": "℗ 2019 Def Jam Recordings, a division of UMG Recordings, Inc.",
+                    "p_line_for_display": "℗ 2019 Def Jam Recordings, a division of UMG Recordings, Inc.",
+                    "c_line": "2019 © 2019 Def Jam Recordings, a division of UMG Recordings, Inc.",
+                    "c_line_for_display": "© 2019 © 2019 Def Jam Recordings, a division of UMG Recordings, Inc.",
+                    "release_title": "Stop Snitchin"
+                },
+                "purchase_title": null,
+                "purchase_url": null,
+                "release_date": "2019-04-24T00:00:00Z",
+                "reposts_count": 1447,
+                "secret_token": null,
+                "sharing": "public",
+                "state": "finished",
+                "streamable": true,
+                "tag_list": "",
+                "title": "Stop Snitchin",
+                "uri": "https://api.soundcloud.com/tracks/609930480",
+                "urn": "soundcloud:tracks:609930480",
+                "user_id": 207969362,
+                "visuals": null,
+                "waveform_url": "https://wave.sndcdn.com/REiFe3JdSNOm_m.json",
+                "display_date": "2019-04-24T04:00:00Z",
+                "media": {
+                    "transcodings": [
+                        {
+                            "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:609930480/a265ca14-339c-4012-920a-78ce17cefa9e/preview/hls",
+                            "preset": "mp3_0_0",
+                            "duration": 30000,
+                            "snipped": true,
+                            "format": {
+                                "protocol": "hls",
+                                "mime_type": "audio/mpeg"
+                            },
+                            "quality": "sq"
+                        },
+                        {
+                            "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:609930480/a265ca14-339c-4012-920a-78ce17cefa9e/preview/progressive",
+                            "preset": "mp3_0_0",
+                            "duration": 30000,
+                            "snipped": true,
+                            "format": {
+                                "protocol": "progressive",
+                                "mime_type": "audio/mpeg"
+                            },
+                            "quality": "sq"
+                        }
+                    ]
+                },
+                "monetization_model": "NOT_APPLICABLE",
+                "policy": "SNIP",
+                "user": {
+                    "avatar_url": "https://i1.sndcdn.com/avatars-000480140013-tiff5c-large.jpg",
+                    "first_name": "",
+                    "full_name": "",
+                    "id": 207969362,
+                    "kind": "user",
+                    "last_modified": "2019-04-24T14:47:11Z",
+                    "last_name": "",
+                    "permalink": "yg400",
+                    "permalink_url": "https://soundcloud.com/yg400",
+                    "uri": "https://api.soundcloud.com/users/207969362",
+                    "urn": "soundcloud:users:207969362",
+                    "username": "YG",
+                    "verified": false,
+                    "city": null,
+                    "country_code": null
+                }
+            },
+            "score": 59262.29713575094
+        },
+        {
+            "track": {
+                "artwork_url": "https://i1.sndcdn.com/artworks-000522521130-mad48r-large.jpg",
+                "commentable": true,
+                "comment_count": 708,
+                "created_at": "2019-04-18T23:21:05Z",
+                "description": "",
+                "downloadable": false,
+                "download_count": 0,
+                "download_url": null,
+                "duration": 200769,
+                "full_duration": 200769,
+                "embeddable_by": "all",
+                "genre": "",
+                "has_downloads_left": true,
+                "id": 608104305,
+                "kind": "track",
+                "label_name": null,
+                "last_modified": "2019-04-27T21:14:11Z",
+                "license": "all-rights-reserved",
+                "likes_count": 54063,
+                "permalink": "young-nudy-x-playboi-carti-pissy-pamper-aka-kid-cudi-slimerre-shit",
+                "permalink_url": "https://soundcloud.com/sneakyshooterv2/young-nudy-x-playboi-carti-pissy-pamper-aka-kid-cudi-slimerre-shit",
+                "playback_count": 1262392,
+                "public": true,
+                "publisher_metadata": {
+                    "id": 608104305,
+                    "urn": "soundcloud:tracks:608104305",
+                    "contains_music": true
+                },
+                "purchase_title": null,
+                "purchase_url": null,
+                "release_date": null,
+                "reposts_count": 2707,
+                "secret_token": null,
+                "sharing": "public",
+                "state": "finished",
+                "streamable": true,
+                "tag_list": "",
+                "title": "Young Nudy X Playboi Carti - Pissy Pamper Aka KID CUDI (Slimerre Shit)",
+                "uri": "https://api.soundcloud.com/tracks/608104305",
+                "urn": "soundcloud:tracks:608104305",
+                "user_id": 619103235,
+                "visuals": null,
+                "waveform_url": "https://wave.sndcdn.com/PXxgG4G8Kh2N_m.json",
+                "display_date": "2019-04-18T23:21:05Z",
+                "media": {
+                    "transcodings": [
+                        {
+                            "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:608104305/e9ea3a8a-edc9-4a6d-b881-980d40c9e110/stream/hls",
+                            "preset": "mp3_0_0",
+                            "duration": 200769,
+                            "snipped": false,
+                            "format": {
+                                "protocol": "hls",
+                                "mime_type": "audio/mpeg"
+                            },
+                            "quality": "sq"
+                        },
+                        {
+                            "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:608104305/e9ea3a8a-edc9-4a6d-b881-980d40c9e110/stream/progressive",
+                            "preset": "mp3_0_0",
+                            "duration": 200769,
+                            "snipped": false,
+                            "format": {
+                                "protocol": "progressive",
+                                "mime_type": "audio/mpeg"
+                            },
+                            "quality": "sq"
+                        },
+                        {
+                            "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:608104305/c7fc49cf-7ced-473e-a88a-00a7553d1887/stream/hls",
+                            "preset": "opus_0_0",
+                            "duration": 200697,
+                            "snipped": false,
+                            "format": {
+                                "protocol": "hls",
+                                "mime_type": "audio/ogg; codecs=\"opus\""
+                            },
+                            "quality": "sq"
+                        }
+                    ]
+                },
+                "monetization_model": "NOT_APPLICABLE",
+                "policy": "ALLOW",
+                "user": {
+                    "avatar_url": "https://i1.sndcdn.com/avatars-000610711809-7qjhpa-large.jpg",
+                    "first_name": "",
+                    "full_name": "",
+                    "id": 619103235,
+                    "kind": "user",
+                    "last_modified": "2019-04-10T04:49:23Z",
+                    "last_name": "",
+                    "permalink": "sneakyshooterv2",
+                    "permalink_url": "https://soundcloud.com/sneakyshooterv2",
+                    "uri": "https://api.soundcloud.com/users/619103235",
+                    "urn": "soundcloud:users:619103235",
+                    "username": "sneaky shooter v2",
+                    "verified": false,
+                    "city": null,
+                    "country_code": null
+                }
+            },
+            "score": 54256.6074753016
+        },
+        {
+            "track": {
+                "artwork_url": "https://i1.sndcdn.com/artworks-000525380160-cz6tyd-large.jpg",
+                "commentable": true,
+                "comment_count": 221,
+                "created_at": "2019-04-24T17:35:35Z",
+                "description": "",
+                "downloadable": false,
+                "download_count": 0,
+                "download_url": null,
+                "duration": 248133,
+                "full_duration": 248133,
+                "embeddable_by": "all",
+                "genre": "",
+                "has_downloads_left": true,
+                "id": 610806297,
+                "kind": "track",
+                "label_name": null,
+                "last_modified": "2019-04-27T19:34:33Z",
+                "license": "all-rights-reserved",
+                "likes_count": 13780,
+                "permalink": "dj-snake-offset-21-savage-sheck-wes-gucci-mane-enzo",
+                "permalink_url": "https://soundcloud.com/djsnake/dj-snake-offset-21-savage-sheck-wes-gucci-mane-enzo",
+                "playback_count": 200565,
+                "public": true,
+                "publisher_metadata": {
+                    "id": 610806297,
+                    "urn": "soundcloud:tracks:610806297",
+                    "artist": "",
+                    "album_title": "",
+                    "contains_music": true,
+                    "publisher": "",
+                    "iswc": "",
+                    "upc_or_ean": "",
+                    "isrc": "USUG11900835",
+                    "p_line": "",
+                    "p_line_for_display": "℗ ",
+                    "writer_composer": "",
+                    "release_title": ""
+                },
+                "purchase_title": "Stream / Download",
+                "purchase_url": "https://DJSnake.lnk.to/ENZO",
+                "release_date": "2019-04-24T00:00:00Z",
+                "reposts_count": 965,
+                "secret_token": null,
+                "sharing": "public",
+                "state": "finished",
+                "streamable": true,
+                "tag_list": "",
+                "title": "DJ Snake, Offset, 21 Savage, Sheck Wes & Gucci Mane - Enzo",
+                "uri": "https://api.soundcloud.com/tracks/610806297",
+                "urn": "soundcloud:tracks:610806297",
+                "user_id": 670089,
+                "visuals": null,
+                "waveform_url": "https://wave.sndcdn.com/P4HlWbHOkEFQ_m.json",
+                "display_date": "2019-04-24T17:35:35Z",
+                "media": {
+                    "transcodings": [
+                        {
+                            "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:610806297/fcfc15f7-f5c7-416c-b73b-344bb8bb83e4/stream/hls",
+                            "preset": "mp3_0_0",
+                            "duration": 248133,
+                            "snipped": false,
+                            "format": {
+                                "protocol": "hls",
+                                "mime_type": "audio/mpeg"
+                            },
+                            "quality": "sq"
+                        },
+                        {
+                            "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:610806297/fcfc15f7-f5c7-416c-b73b-344bb8bb83e4/stream/progressive",
+                            "preset": "mp3_0_0",
+                            "duration": 248133,
+                            "snipped": false,
+                            "format": {
+                                "protocol": "progressive",
+                                "mime_type": "audio/mpeg"
+                            },
+                            "quality": "sq"
+                        },
+                        {
+                            "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:610806297/df66ccc4-335e-46e1-a10d-0db01e0475c1/stream/hls",
+                            "preset": "opus_0_0",
+                            "duration": 248050,
+                            "snipped": false,
+                            "format": {
+                                "protocol": "hls",
+                                "mime_type": "audio/ogg; codecs=\"opus\""
+                            },
+                            "quality": "sq"
+                        }
+                    ]
+                },
+                "monetization_model": "NOT_APPLICABLE",
+                "policy": "ALLOW",
+                "user": {
+                    "avatar_url": "https://i1.sndcdn.com/avatars-000607078605-vn2n3y-large.jpg",
+                    "first_name": "",
+                    "full_name": "",
+                    "id": 670089,
+                    "kind": "user",
+                    "last_modified": "2019-04-24T17:41:53Z",
+                    "last_name": "",
+                    "permalink": "djsnake",
+                    "permalink_url": "https://soundcloud.com/djsnake",
+                    "uri": "https://api.soundcloud.com/users/670089",
+                    "urn": "soundcloud:users:670089",
+                    "username": "DJ SNAKE",
+                    "verified": false,
+                    "city": "Paris",
+                    "country_code": null
+                }
+            },
+            "score": 52498.84499711991
+        },
+        {
+            "track": {
+                "artwork_url": "https://i1.sndcdn.com/artworks-000525595728-nr56oo-large.jpg",
+                "commentable": true,
+                "comment_count": 173,
+                "created_at": "2019-04-25T03:28:25Z",
+                "description": "",
+                "downloadable": false,
+                "download_count": 0,
+                "download_url": null,
+                "duration": 186296,
+                "full_duration": 186296,
+                "embeddable_by": "all",
+                "genre": "Hip-hop & Rap",
+                "has_downloads_left": true,
+                "id": 611038560,
+                "kind": "track",
+                "label_name": null,
+                "last_modified": "2019-04-27T19:34:30Z",
+                "license": "all-rights-reserved",
+                "likes_count": 11052,
+                "permalink": "oh-my-god",
+                "permalink_url": "https://soundcloud.com/lilkeed1/oh-my-god",
+                "playback_count": 164210,
+                "public": true,
+                "publisher_metadata": {
+                    "id": 611038560,
+                    "urn": "soundcloud:tracks:611038560",
+                    "artist": "Lil Keed ",
+                    "album_title": "",
+                    "contains_music": true,
+                    "publisher": "",
+                    "iswc": "",
+                    "upc_or_ean": "",
+                    "isrc": "QMCE31902156",
+                    "p_line": "",
+                    "p_line_for_display": "℗ ",
+                    "writer_composer": "",
+                    "release_title": ""
+                },
+                "purchase_title": null,
+                "purchase_url": null,
+                "release_date": null,
+                "reposts_count": 974,
+                "secret_token": null,
+                "sharing": "public",
+                "state": "finished",
+                "streamable": true,
+                "tag_list": "scfirst",
+                "title": "Oh My God",
+                "uri": "https://api.soundcloud.com/tracks/611038560",
+                "urn": "soundcloud:tracks:611038560",
+                "user_id": 505329210,
+                "visuals": null,
+                "waveform_url": "https://wave.sndcdn.com/rcRjDl1edpZB_m.json",
+                "display_date": "2019-04-25T04:00:44Z",
+                "media": {
+                    "transcodings": [
+                        {
+                            "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:611038560/29cc8fa5-48b4-4677-a32a-f6faa2298cdf/stream/hls",
+                            "preset": "mp3_0_0",
+                            "duration": 186296,
+                            "snipped": false,
+                            "format": {
+                                "protocol": "hls",
+                                "mime_type": "audio/mpeg"
+                            },
+                            "quality": "sq"
+                        },
+                        {
+                            "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:611038560/29cc8fa5-48b4-4677-a32a-f6faa2298cdf/stream/progressive",
+                            "preset": "mp3_0_0",
+                            "duration": 186296,
+                            "snipped": false,
+                            "format": {
+                                "protocol": "progressive",
+                                "mime_type": "audio/mpeg"
+                            },
+                            "quality": "sq"
+                        },
+                        {
+                            "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:611038560/a7061f1f-af37-409e-88c2-e4db09605140/stream/hls",
+                            "preset": "opus_0_0",
+                            "duration": 186220,
+                            "snipped": false,
+                            "format": {
+                                "protocol": "hls",
+                                "mime_type": "audio/ogg; codecs=\"opus\""
+                            },
+                            "quality": "sq"
+                        }
+                    ]
+                },
+                "monetization_model": "NOT_APPLICABLE",
+                "policy": "ALLOW",
+                "user": {
+                    "avatar_url": "https://i1.sndcdn.com/avatars-000548971506-e6cneq-large.jpg",
+                    "first_name": "Lil",
+                    "full_name": "Lil Keed",
+                    "id": 505329210,
+                    "kind": "user",
+                    "last_modified": "2019-04-25T04:03:08Z",
+                    "last_name": "Keed",
+                    "permalink": "lilkeed1",
+                    "permalink_url": "https://soundcloud.com/lilkeed1",
+                    "uri": "https://api.soundcloud.com/users/505329210",
+                    "urn": "soundcloud:users:505329210",
+                    "username": "Lil Keed",
+                    "verified": false,
+                    "city": "Atlanta",
+                    "country_code": null
+                }
+            },
+            "score": 49258.61248037013
+        },
+        {
+            "track": {
+                "artwork_url": "https://i1.sndcdn.com/artworks-000524179359-v6h1t6-large.jpg",
+                "commentable": true,
+                "comment_count": 116,
+                "created_at": "2019-04-22T09:13:05Z",
+                "description": "#TWICE (트와이스) - #FANCY_YOU\nDownload Album (MP3 - 320kbps):\n***If you see a warning. Please just click on More options, next click on Continue onwards.\nMediafire>>>http://q.gs/EqDTJ\nRelease Date: 2019.04.22\n\nTrack List:\n01. #FANCY\n02. STUCK IN MY HEAD\n03. GIRLS LIKE US\n04. HOT\n05. TURN IT UP\n06. STRAWBERRY\n\n#TWICE - #FANCY #TWICE_FANCY #트와이스 #FANCY_TWICE",
+                "downloadable": false,
+                "download_count": 0,
+                "download_url": null,
+                "duration": 212080,
+                "full_duration": 212080,
+                "embeddable_by": "all",
+                "genre": "",
+                "has_downloads_left": true,
+                "id": 609621186,
+                "kind": "track",
+                "label_name": null,
+                "last_modified": "2019-04-27T20:19:18Z",
+                "license": "all-rights-reserved",
+                "likes_count": 10828,
+                "permalink": "twice-fancy",
+                "permalink_url": "https://soundcloud.com/l2sharetwice/twice-fancy",
+                "playback_count": 379481,
+                "public": true,
+                "publisher_metadata": {
+                    "id": 609621186,
+                    "urn": "soundcloud:tracks:609621186",
+                    "contains_music": true
+                },
+                "purchase_title": null,
+                "purchase_url": null,
+                "release_date": null,
+                "reposts_count": 248,
+                "secret_token": null,
+                "sharing": "public",
+                "state": "finished",
+                "streamable": true,
+                "tag_list": "Dance \"TWICE FANCY\" TWICE FANCY \"FANCY TWICE \"",
+                "title": "TWICE - FANCY",
+                "uri": "https://api.soundcloud.com/tracks/609621186",
+                "urn": "soundcloud:tracks:609621186",
+                "user_id": 340826480,
+                "visuals": null,
+                "waveform_url": "https://wave.sndcdn.com/ss4EF3FUxhEH_m.json",
+                "display_date": "2019-04-22T09:13:05Z",
+                "media": {
+                    "transcodings": [
+                        {
+                            "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:609621186/c4e9d6ba-2fef-4200-a9c1-8c4bf2c0846f/stream/hls",
+                            "preset": "mp3_0_0",
+                            "duration": 212080,
+                            "snipped": false,
+                            "format": {
+                                "protocol": "hls",
+                                "mime_type": "audio/mpeg"
+                            },
+                            "quality": "sq"
+                        },
+                        {
+                            "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:609621186/c4e9d6ba-2fef-4200-a9c1-8c4bf2c0846f/stream/progressive",
+                            "preset": "mp3_0_0",
+                            "duration": 212080,
+                            "snipped": false,
+                            "format": {
+                                "protocol": "progressive",
+                                "mime_type": "audio/mpeg"
+                            },
+                            "quality": "sq"
+                        },
+                        {
+                            "url": "https://api-v2.soundcloud.com/media/soundcloud:tracks:609621186/fa8aaef3-81c1-46bb-b1c4-aea6cf32af66/stream/hls",
+                            "preset": "opus_0_0",
+                            "duration": 212007,
+                            "snipped": false,
+                            "format": {
+                                "protocol": "hls",
+                                "mime_type": "audio/ogg; codecs=\"opus\""
+                            },
+                            "quality": "sq"
+                        }
+                    ]
+                },
+                "monetization_model": "NOT_APPLICABLE",
+                "policy": "ALLOW",
+                "user": {
+                    "avatar_url": "https://i1.sndcdn.com/avatars-000342476627-duhphb-large.jpg",
+                    "first_name": "",
+                    "full_name": "",
+                    "id": 340826480,
+                    "kind": "user",
+                    "last_modified": "2019-04-22T03:37:55Z",
+                    "last_name": "",
+                    "permalink": "l2sharetwice",
+                    "permalink_url": "https://soundcloud.com/l2sharetwice",
+                    "uri": "https://api.soundcloud.com/users/340826480",
+                    "urn": "soundcloud:users:340826480",
+                    "username": "L2ShareTWICE",
+                    "verified": false,
+                    "city": null,
+                    "country_code": null
+                }
+            },
+            "score": 47961.93326113024
+        }
+    ],
+    "query_urn": "soundcloud:charts:042dfba3a366426fb96c66d7d4929ba0",
+    "next_href": "https://api-v2.soundcloud.com/charts?genre=soundcloud%3Agenres%3Aall-music&query_urn=soundcloud%3Acharts%3A042dfba3a366426fb96c66d7d4929ba0&offset=20&high_tier_only=false&kind=trending&limit=20"
+}

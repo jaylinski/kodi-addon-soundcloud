@@ -22,16 +22,49 @@ msgid "General"
 msgstr "Allgemein"
 
 msgctxt "#30002"
+msgid "Audio"
+msgstr "Audio"
+
+msgctxt "#30003"
+msgid "Format"
+msgstr "Format"
+
+msgctxt "#30011"
+msgid "Search"
+msgstr "Suche"
+
+msgctxt "#300012"
 msgid "Items per page"
 msgstr "Einträge pro Seite"
 
-msgctxt "#30003"
-msgid "Search History Size"
+msgctxt "#300013"
+msgid "History Size"
 msgstr "Größe der Suchhistorie"
 
-msgctxt "#30004"
-msgid "Audio format"
-msgstr "Audioformat"
+# Settings - Advanced
+msgctxt "#30051"
+msgid "Advanced"
+msgstr "Fortgeschritten"
+
+msgctxt "#30060"
+msgid "API v2"
+msgstr "API v2"
+
+msgctxt "#30061"
+msgid "Client-ID"
+msgstr "Client-ID"
+
+msgctxt "#30062"
+msgid "Localization"
+msgstr "Sprache"
+
+msgctxt "#30063"
+msgid "automatisch"
+msgstr ""
+
+msgctxt "#30064"
+msgid "deaktiviert"
+msgstr ""
 
 # GUI - Root
 msgctxt "#30101"
@@ -39,6 +72,10 @@ msgid "Search"
 msgstr "Suche"
 
 msgctxt "#30102"
+msgid "Charts"
+msgstr "Charts"
+
+msgctxt "#30103"
 msgid "Discover"
 msgstr "Discover"
 
@@ -67,6 +104,15 @@ msgctxt "#30213"
 msgid "Playlists"
 msgstr "Playlists"
 
+# GUI - Charts
+msgctxt "#30301"
+msgid "Top 50"
+msgstr "Top 50"
+
+msgctxt "#30302"
+msgid "Trending"
+msgstr "Neu und angesagt"
+
 # GUI - Generic
 msgctxt "#30901"
 msgid "Next page"
@@ -75,3 +121,7 @@ msgstr "Nächste Seite"
 msgctxt "#30902"
 msgid "Not available in your country"
 msgstr "In deinem Land nicht verfügbar"
+
+msgctxt "#30903"
+msgid "Preview"
+msgstr "Vorschau"
