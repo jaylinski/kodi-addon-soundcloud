@@ -54,7 +54,7 @@ class Items:
 
         # Search history
         history = self.search_history.get()
-        for k in sorted(history.keys(), reverse=True):
+        for k in sorted(list(history), reverse=True):
             list_item = xbmcgui.ListItem(label=history[k].get("query"))
             url = self.addon_base + PATH_SEARCH + "?" + urllib.parse.urlencode({
                 "action": "new",
@@ -118,11 +118,11 @@ class Items:
         for item in collection.items:
             items.append(item.to_list_item(self.addon_base))
 
-        if collection.next:
+        if collection.next_href:
             next_item = xbmcgui.ListItem(label=self.addon.getLocalizedString(30901))
             url = self.addon_base + "/?" + urllib.parse.urlencode({
                 "action": "call",
-                "call": collection.next
+                "call": collection.next_href
             })
             items.append((url, next_item, True))
 

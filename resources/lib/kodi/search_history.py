@@ -12,7 +12,7 @@ class SearchHistory:
 
     def get(self):
         search = self.vfs.get_json_as_obj(self.filename)
-        return {k: search[k] for k in search.keys()[:self.size]}
+        return {k: search[k] for k in list(search)[:self.size]}
 
     def add(self, query):
         search = self.vfs.get_json_as_obj(self.filename)
@@ -21,4 +21,4 @@ class SearchHistory:
         self.vfs.save_obj_to_json(self.filename, search)
 
     def _reduce(self, search):
-        return {k: search[k] for k in sorted(search.keys(), reverse=True)[:self.size]}
+        return {k: search[k] for k in sorted(list(search), reverse=True)[:self.size]}

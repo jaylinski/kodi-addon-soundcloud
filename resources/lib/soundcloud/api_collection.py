@@ -2,4 +2,4 @@ class ApiCollection:
     type = 0
     items = []
     load = []
-    next = ""
+    next_href = ""

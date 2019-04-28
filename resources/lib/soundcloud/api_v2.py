@@ -128,7 +128,7 @@ class ApiV2(ApiInterface):
         collection = ApiCollection()
         collection.items = []  # Reset list in order to resolve problems in unit tests.
         collection.load = []
-        collection.next = json_obj.get("next_href", None)
+        collection.next_href = json_obj.get("next_href", None)
 
         if "kind" in json_obj and json_obj["kind"] == "track":
             # If we are dealing with a single track, pack it into a dict
