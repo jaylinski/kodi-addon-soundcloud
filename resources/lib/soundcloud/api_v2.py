@@ -3,6 +3,7 @@ standard_library.install_aliases()  # noqa: E402
 
 import hashlib
 import json
+import re
 import requests
 import urllib.parse
 import xbmc
@@ -231,6 +232,31 @@ class ApiV2(ApiInterface):
         }
 
         return track
+
+    @staticmethod
+    def fetch_client_id():
+        headers = {"Accept-Encoding": "gzip"}
+
+        # Get the HTML (includes a reference to the JS file we need)
+        html = requests.get("https://soundcloud.com/", headers=headers).text
+
+        # Extract the HREF to the JS file (which contains the API key)
+        match = re.search(r"=\"(https://a-v2\.sndcdn\.com/assets/app.*)\"", html)
+
+        if match:
+            # Get the JS
+            response = requests.get(match.group(1), headers=headers)
+            response.encoding = "utf-8"  # This speeds up `response.text` by 3 seconds
+
+            # Extract the API key
+            key = re.search(r"exports={\"api-v2\".*client_id:\"(\w*)\"", response.text)
+
+            if key:
+                return key.group(1)
+            else:
+                raise Exception("Failed to extract client key from js")
+        else:
+            raise Exception("Failed to extract js href from html")
 
     @staticmethod
     def _is_preferred_codec(codec, setting):
