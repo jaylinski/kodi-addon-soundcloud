@@ -21,3 +21,6 @@ class Settings:
 
     def get(self, id):
         return self.addon.getSetting(id)
+
+    def set(self, id, value):
+        return self.addon.setSetting(id, value)
