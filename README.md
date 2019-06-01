@@ -19,6 +19,12 @@ This [Kodi](https://github.com/xbmc/xbmc) Add-on provides a minimal interface fo
 
 ## Installation
 
+### Kodi Repository
+
+Follow the instructions on [https://kodi.wiki/view/Add-on:SoundCloud](https://kodi.wiki/view/Add-on:SoundCloud).
+
+### Manual
+
 * [Download the latest release](https://github.com/jaylinski/kodi-addon-soundcloud/releases) (`plugin.audio.soundcloud.zip`)
 * Copy the zip file to your Kodi system
 * Open Kodi, go to Add-ons and select "Install from zip file"

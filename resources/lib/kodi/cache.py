@@ -1,11 +1,7 @@
-import os
 import time
 
 
 class Cache:
-
-    path = ""
-
     def __init__(self, settings, vfs):
         self.settings = settings
         self.vfs = vfs
@@ -16,16 +12,14 @@ class Cache:
         :param filename: str
         :type age: int Minutes
         """
-        filepath = os.path.join(self.path, filename)
-        file = self.vfs.read(filepath)
+        file = self.vfs.read(filename)
 
         if file:
-            mtime = self.vfs.get_mtime(filepath)
+            mtime = self.vfs.get_mtime(filename)
             if (int(time.time()) - age * 60) > mtime:
                 return None
 
         return file
 
     def add(self, filename, data):
-        filepath = os.path.join(self.path, filename)
-        return self.vfs.write(filepath, data)
+        return self.vfs.write(filename, data)

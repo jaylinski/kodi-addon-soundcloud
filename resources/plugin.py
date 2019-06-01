@@ -8,8 +8,9 @@ from resources.lib.kodi.search_history import SearchHistory
 from resources.lib.kodi.settings import Settings
 from resources.lib.kodi.vfs import VFS
 from resources.routes import *
-import urllib.parse
+import os
 import sys
+import urllib.parse
 import xbmc
 import xbmcaddon
 import xbmcgui
@@ -18,14 +19,13 @@ import xbmcplugin
 addon = xbmcaddon.Addon()
 addon_id = addon.getAddonInfo("id")
 addon_base = "plugin://" + addon_id
-addon_profile_path = xbmc.translatePath(addon.getAddonInfo('profile')).decode('utf-8')
-addon_temp_path = xbmc.translatePath('special://temp/%s' % addon_id).decode('utf-8')
-vfs_addon_data = VFS(addon_profile_path)
-vfs_temp = VFS(addon_temp_path)
+addon_profile_path = xbmc.translatePath(addon.getAddonInfo('profile'))
+vfs = VFS(addon_profile_path)
+vfs_cache = VFS(os.path.join(addon_profile_path, "cache"))
 settings = Settings(addon)
-cache = Cache(settings, vfs_temp)
+cache = Cache(settings, vfs_cache)
 api = ApiV2(settings, xbmc.getLanguage(xbmc.ISO_639_1), cache)
-search_history = SearchHistory(settings, vfs_addon_data)
+search_history = SearchHistory(settings, vfs)
 listItems = Items(addon, addon_base, search_history)
 
 
