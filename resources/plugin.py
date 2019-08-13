@@ -93,17 +93,20 @@ def run():
         elif track_id:
             collection = listItems.from_collection(api.resolve_id(track_id))
             playlist = xbmc.PlayList(xbmc.PLAYLIST_MUSIC)
+            resolve_list_item(handle, collection[0][1])
             playlist.add(url=collection[0][0], listitem=collection[0][1])
         elif playlist_id:
             call = "/playlists/{id}".format(id=playlist_id)
             collection = listItems.from_collection(api.call(call))
             playlist = xbmc.PlayList(xbmc.PLAYLIST_MUSIC)
             for item in collection:
+                resolve_list_item(handle, item[1])
                 playlist.add(url=item[0], listitem=item[1])
         elif url:
             collection = listItems.from_collection(api.resolve_url(url))
             playlist = xbmc.PlayList(xbmc.PLAYLIST_MUSIC)
             for item in collection:
+                resolve_list_item(handle, item[1])
                 playlist.add(url=item[0], listitem=item[1])
         else:
             xbmc.log("Invalid play param", xbmc.LOGERROR)
@@ -147,3 +150,9 @@ def run():
 
     else:
         xbmc.log("Path not found", xbmc.LOGERROR)
+
+
+def resolve_list_item(handle, list_item):
+    resolved_url = api.resolve_media_url(list_item.getProperty("mediaUrl"))
+    list_item.setPath(resolved_url)
+    xbmcplugin.setResolvedUrl(handle, succeeded=True, listitem=list_item)
