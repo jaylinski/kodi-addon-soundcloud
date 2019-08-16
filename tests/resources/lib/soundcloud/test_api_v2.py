@@ -36,6 +36,17 @@ class ApiV2TestCase(TestCase):
         self.assertEqual(res.items[1].info["artist"], "NOISIA")
         self.assertEqual(res.items[1].media, "https://api-v2.soundcloud.com/media/soundcloud:tracks:23547065/e7846551-5c8e-4b93-b4f0-f94bfa7b1275/stream/hls")
 
+    def test_resolve_id(self):
+        with open("./tests/mocks/api_v2_tracks.json") as f:
+            mock_data = f.read()
+
+        self.api._do_request = Mock(return_value=json.loads(mock_data))
+
+        res = self.api.resolve_id(273627408)
+
+        self.assertEqual(res.items[0].label, "Voodoo (Outer Edges)")
+        self.assertEqual(res.items[0].media, "https://api-v2.soundcloud.com/media/soundcloud:tracks:273627408/d35bd07a-3adb-4620-a876-7770f80ff48d/stream/hls")
+
     def test_discover(self):
         with open("./tests/mocks/api_v2_discover.json") as f:
             mock_data = f.read()
