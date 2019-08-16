@@ -1,7 +1,7 @@
 import json
 import sys
 from unittest import TestCase
-from unittest.mock import MagicMock, Mock, DEFAULT
+from unittest.mock import MagicMock, Mock, DEFAULT, ANY
 sys.modules['xbmc'] = MagicMock()
 sys.modules['xbmcaddon'] = MagicMock()
 sys.modules['xbmcgui'] = MagicMock()
@@ -83,3 +83,15 @@ class ApiV2TestCase(TestCase):
 
         res = self.api.resolve_id("country blocks suck")
         self.assertEqual(res.items[0].blocked, True)
+
+    def test_resolve_url(self):
+        with open("./tests/mocks/api_v2_resolve_track.json") as f:
+            mock_data = f.read()
+
+        self.api._do_request = Mock(return_value=json.loads(mock_data))
+
+        res = self.api.resolve_url("https://m.soundcloud.com/user/foo")
+        # The SoundCloud APIv2 can't resolve mobile links (m.soundcloud.com), so they have to
+        # be fixed manually. The following assertion is testing this.
+        self.api._do_request.assert_called_with(ANY, {"url": "https://soundcloud.com/user/foo"})
+        self.assertEqual(res.items[0].label, "Thomas Hayden - Universe")
