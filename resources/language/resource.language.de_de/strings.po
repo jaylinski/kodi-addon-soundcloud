@@ -38,7 +38,7 @@ msgid "Items per page"
 msgstr "Einträge pro Seite"
 
 msgctxt "#30013"
-msgid "History Size"
+msgid "History size"
 msgstr "Größe der Suchhistorie"
 
 # Settings - Advanced
