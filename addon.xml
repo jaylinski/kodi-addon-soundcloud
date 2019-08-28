@@ -10,8 +10,10 @@
     </extension>
     <extension point="xbmc.service" library="service.py" />
     <extension point="xbmc.addon.metadata">
-        <summary lang="de_DE">SoundCloud ist eine Musik- und Podcast-Streaming-Plattform, mit der Du Millionen von Songs aus der ganzen Welt anhören kannst.</summary>
-		<summary lang="en_GB">SoundCloud is a music and podcast streaming platform that lets you listen to millions of songs from around the world.</summary>
+        <summary lang="de_DE">SoundCloud – Musik- und Podcast-Streaming-Plattform</summary>
+        <summary lang="en_GB">SoundCloud – Music and podcast streaming platform</summary>
+        <description lang="de_DE">SoundCloud ist eine Musik- und Podcast-Streaming-Plattform, mit der Du Millionen von Songs aus der ganzen Welt anhören kannst.</description>
+		<description lang="en_GB">SoundCloud is a music and podcast streaming platform that lets you listen to millions of songs from around the world.</description>
         <language></language>
         <platform>all</platform>
         <license>MIT</license>
