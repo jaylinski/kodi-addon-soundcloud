@@ -110,8 +110,8 @@ msgid "Top 50"
 msgstr ""
 
 msgctxt "#30302"
-msgid "Trending"
-msgstr "New & hot"
+msgid "New & hot"
+msgstr ""
 
 # GUI - Generic
 msgctxt "#30901"

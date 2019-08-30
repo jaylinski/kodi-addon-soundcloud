@@ -110,7 +110,7 @@ msgid "Top 50"
 msgstr "Top 50"
 
 msgctxt "#30302"
-msgid "Trending"
+msgid "New & hot"
 msgstr "Neu und angesagt"
 
 # GUI - Generic
