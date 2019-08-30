@@ -5,12 +5,14 @@ from unittest.mock import MagicMock, Mock, DEFAULT, ANY
 sys.modules['xbmc'] = MagicMock()
 sys.modules['xbmcaddon'] = MagicMock()
 sys.modules['xbmcgui'] = MagicMock()
+from resources.lib.kodi.settings import Settings
 from resources.lib.soundcloud.api_v2 import ApiV2
 
 
 class ApiV2TestCase(TestCase):
     def setUp(self):
-        self.api = ApiV2(settings=MagicMock(), lang="en", cache=MagicMock())
+        self.api = ApiV2(settings=Settings(MagicMock()), lang="en", cache=MagicMock())
+        self.api.settings.get = self._side_effect_settings_get
 
     @staticmethod
     def _side_effect_do_request(*args):
@@ -18,6 +20,13 @@ class ApiV2TestCase(TestCase):
             with open("./tests/mocks/api_v2_discover_tracks.json") as f:
                 mock_data = f.read()
             return json.loads(mock_data)
+        else:
+            return DEFAULT
+
+    @staticmethod
+    def _side_effect_settings_get(*args):
+        if args[0] == "audio.format":
+            return "2"  # Default in settings (mp3 progressive)
         else:
             return DEFAULT
 
@@ -31,10 +40,10 @@ class ApiV2TestCase(TestCase):
 
         self.assertEqual(res.items[0].label, "Deadmau5 - Raise Your Weapon (Noisia Remix)")
         self.assertEqual(res.items[0].info["artist"], "NOISIA")
-        self.assertEqual(res.items[0].media, "https://api-v2.soundcloud.com/media/soundcloud:tracks:15784497/580ad806-b3ab-440f-adbe-c12a83258a37/stream/hls")
+        self.assertEqual(res.items[0].media, "https://api-v2.soundcloud.com/media/soundcloud:tracks:15784497/580ad806-b3ab-440f-adbe-c12a83258a37/stream/progressive")
         self.assertEqual(res.items[1].label, "Labrinth ft. Tinie Tempah - Earthquake (Noisia Remix)")
         self.assertEqual(res.items[1].info["artist"], "NOISIA")
-        self.assertEqual(res.items[1].media, "https://api-v2.soundcloud.com/media/soundcloud:tracks:23547065/e7846551-5c8e-4b93-b4f0-f94bfa7b1275/stream/hls")
+        self.assertEqual(res.items[1].media, "https://api-v2.soundcloud.com/media/soundcloud:tracks:23547065/e7846551-5c8e-4b93-b4f0-f94bfa7b1275/stream/progressive")
 
     def test_resolve_id(self):
         with open("./tests/mocks/api_v2_tracks.json") as f:
@@ -45,7 +54,20 @@ class ApiV2TestCase(TestCase):
         res = self.api.resolve_id(273627408)
 
         self.assertEqual(res.items[0].label, "Voodoo (Outer Edges)")
-        self.assertEqual(res.items[0].media, "https://api-v2.soundcloud.com/media/soundcloud:tracks:273627408/d35bd07a-3adb-4620-a876-7770f80ff48d/stream/hls")
+        self.assertEqual(res.items[0].media, "https://api-v2.soundcloud.com/media/soundcloud:tracks:273627408/d35bd07a-3adb-4620-a876-7770f80ff48d/stream/progressive")
+
+    def test_resolve_url(self):
+        with open("./tests/mocks/api_v2_resolve_track.json") as f:
+            mock_data = f.read()
+
+        self.api._do_request = Mock(return_value=json.loads(mock_data))
+
+        res = self.api.resolve_url("https://m.soundcloud.com/user/foo")
+        # The SoundCloud APIv2 can't resolve mobile links (m.soundcloud.com), so they have to
+        # be fixed manually. The following assertion is testing this.
+        self.api._do_request.assert_called_with(ANY, {"url": "https://soundcloud.com/user/foo"})
+        self.assertEqual(res.items[0].label, "Thomas Hayden - Universe")
+        self.assertEqual(res.items[0].media, "https://api-v2.soundcloud.com/media/soundcloud:tracks:584959245/631cc995-e8f2-4a62-a212-5a5768046bc2/stream/progressive")
 
     def test_discover(self):
         with open("./tests/mocks/api_v2_discover.json") as f:
@@ -95,14 +117,13 @@ class ApiV2TestCase(TestCase):
         res = self.api.resolve_id("country blocks suck")
         self.assertEqual(res.items[0].blocked, True)
 
-    def test_resolve_url(self):
-        with open("./tests/mocks/api_v2_resolve_track.json") as f:
+    def test_audio_format(self):
+        with open("./tests/mocks/api_v2_tracks.json") as f:
             mock_data = f.read()
 
         self.api._do_request = Mock(return_value=json.loads(mock_data))
+        self.api.settings.get = Mock(return_value="0")
 
-        res = self.api.resolve_url("https://m.soundcloud.com/user/foo")
-        # The SoundCloud APIv2 can't resolve mobile links (m.soundcloud.com), so they have to
-        # be fixed manually. The following assertion is testing this.
-        self.api._do_request.assert_called_with(ANY, {"url": "https://soundcloud.com/user/foo"})
-        self.assertEqual(res.items[0].label, "Thomas Hayden - Universe")
+        res = self.api.resolve_id(1)
+
+        self.assertEqual(res.items[0].media, "https://api-v2.soundcloud.com/media/soundcloud:tracks:273627408/23d4e278-f8c0-4438-ace8-201dbd242a1c/stream/hls")
