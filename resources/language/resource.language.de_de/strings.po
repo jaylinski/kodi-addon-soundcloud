@@ -104,6 +104,10 @@ msgctxt "#30213"
 msgid "Playlists"
 msgstr "Playlists"
 
+msgctxt "#30214"
+msgid "Spotlight"
+msgstr "Spotlight"
+
 # GUI - Charts
 msgctxt "#30301"
 msgid "Top 50"
