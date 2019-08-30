@@ -162,3 +162,14 @@ class ApiV2TestCase(TestCase):
         res = self.api.resolve_id(1)
 
         self.assertEqual(res.items[0].media, "https://api-v2.soundcloud.com/media/soundcloud:tracks:273627408/23d4e278-f8c0-4438-ace8-201dbd242a1c/stream/hls")
+
+    def test_call(self):
+        with open("./tests/mocks/api_v2_search_playlists_without_albums.json") as f:
+            mock_data = f.read()
+
+        self.api._do_request = Mock(return_value=json.loads(mock_data))
+
+        res = self.api.call("/playlists/1")
+
+        self.assertEqual(res.items[0].label, "Noisia")
+        self.assertEqual(res.items[1].label, "NOISIA")
