@@ -111,6 +111,71 @@ class Items:
 
         return items
 
+    def charts_genres(self):
+        items = []
+
+        # Music genres
+        list_item = xbmcgui.ListItem(label=format_bold(self.addon.getLocalizedString(30310)))
+        url = self.addon_base + PATH_CHARTS + "?" + urllib.parse.urlencode({
+            "action": "top"
+        })
+        items.append((url, list_item, True))
+
+        # Audio genres
+        list_item = xbmcgui.ListItem(label=format_bold(self.addon.getLocalizedString(30311)))
+        url = self.addon_base + PATH_CHARTS + "?" + urllib.parse.urlencode({
+            "action": "trending"
+        })
+        items.append((url, list_item, True))
+
+        """
+alternativerock: n(51).t('Alternative Rock'),
+ambient: n(51).t('Ambient'),
+classical: n(51).t('Classical'),
+country: n(51).t('Country'),
+danceedm: n(51).t('Dance &amp; EDM'),
+dancehall: n(51).t('Dancehall'),
+deephouse: n(51).t('Deep House'),
+disco: n(51).t('Disco'),
+drumbass: n(51).t('Drum &amp; Bass'),
+dubstep: n(51).t('Dubstep'),
+electronic: n(51).t('Electronic'),
+folksingersongwriter: n(51).t('Folk &amp; Singer-Songwriter'),
+hiphoprap: n(51).t('Hip-hop &amp; Rap'),
+house: n(51).t('House'),
+indie: n(51).t('Indie'),
+jazzblues: n(51).t('Jazz &amp; Blues'),
+latin: n(51).t('Latin'),
+metal: n(51).t('Metal'),
+piano: n(51).t('Piano'),
+pop: n(51).t('Pop'),
+rbsoul: n(51).t('R&B &amp; Soul'),
+reggae: n(51).t('Reggae'),
+reggaeton: n(51).t('Reggaeton'),
+rock: n(51).t('Rock'),
+soundtrack: n(51).t('Soundtrack'),
+speech: n(51).t('Speech'),
+techno: n(51).t('Techno'),
+trance: n(51).t('Trance'),
+trap: n(51).t('Trap'),
+triphop: n(51).t('Triphop'),
+world: n(51).t('World'),
+audiobooks: n(51).t('Audiobooks'),
+business: n(51).t('Business'),
+comedy: n(51).t('Comedy'),
+entertainment: n(51).t('Entertainment'),
+learning: n(51).t('Learning'),
+newspolitics: n(51).t('News &amp; Politics'),
+religionspirituality: n(51).t('Religion &amp; Spirituality'),
+science: n(51).t('Science'),
+sports: n(51).t('Sports'),
+storytelling: n(51).t('Storytelling'),
+technology: n(51).t('Technology')
+},
+"""
+
+        return items
+
     def from_collection(self, collection):
         items = []
 

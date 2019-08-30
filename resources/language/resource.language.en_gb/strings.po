@@ -113,6 +113,14 @@ msgctxt "#30302"
 msgid "New & hot"
 msgstr ""
 
+msgctxt "#30310"
+msgid "Music genres"
+msgstr ""
+
+msgctxt "#30311"
+msgid "Audio genres"
+msgstr ""
+
 # GUI - Generic
 msgctxt "#30901"
 msgid "Next page"

@@ -62,8 +62,10 @@ def run():
             xbmcplugin.addDirectoryItems(handle, items, len(items))
             xbmcplugin.endOfDirectory(handle)
         else:
+            items = listItems.charts_genres()
             api_result = api.charts({"kind": action, "genre": genre, "limit": 50})
             collection = listItems.from_collection(api_result)
+            xbmcplugin.addDirectoryItems(handle, items, len(items))
             xbmcplugin.addDirectoryItems(handle, collection, len(collection))
             xbmcplugin.endOfDirectory(handle)
 
