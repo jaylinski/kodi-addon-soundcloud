@@ -4,11 +4,11 @@
         "mock": "api_v2_charts.json"
     },
     {
-        "url": "https://api-v2.soundcloud.com/selections?client_id=FweeGBOOEOYJWLJN3oEyToGLKhmSz0I7",
+        "url": "https://api-v2.soundcloud.com/mixed-selections?client_id=fPcvSVYVoQDmIlkJL33irYQTFmkkuvW8",
         "mock": "api_v2_discover.json"
     },
     {
-        "url": "https://api-v2.soundcloud.com/tracks?ids=539018871,603185304,593822850&client_id=FweeGBOOEOYJWLJN3oEyToGLKhmSz0I7",
+        "url": "https://api-v2.soundcloud.com/tracks?ids=683327426,591031647,597967971&client_id=fPcvSVYVoQDmIlkJL33irYQTFmkkuvW8",
         "mock": "api_v2_discover_tracks.json"
     },
     {

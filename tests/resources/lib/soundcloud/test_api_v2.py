@@ -126,10 +126,10 @@ class ApiV2TestCase(TestCase):
 
         # Level 3
         res = self.api.discover("soundcloud:system-playlists:charts-top:all-music:at")
-        self.assertEqual(res.load[0], 539018871)
-        self.assertEqual(res.load[1], 603185304)
-        self.assertEqual(res.items[0].label, "Old Town Road (I Got The Horses In The Back) [Prod. YoungKio]")
-        self.assertEqual(res.items[1].label, "Capital Bra ft. Summer Cem & KC Rebell - Rolex (Official Audio)")
+        self.assertEqual(res.load[0], 683327426)
+        self.assertEqual(res.load[1], 591031647)
+        self.assertEqual(res.items[0].label, "110")
+        self.assertEqual(res.items[1].label, "THis iS thE LiFe - TEKK Remix")
 
     def test_charts(self):
         with open("./tests/mocks/api_v2_charts.json") as f:
