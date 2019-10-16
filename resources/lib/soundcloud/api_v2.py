@@ -44,11 +44,10 @@ class ApiV2(ApiInterface):
         return self._map_json_to_collection(res)
 
     def discover(self, selection_id=None):
-        res = self._do_request("/selections", {}, self.api_cache["discover"])
+        res = self._do_request("/mixed-selections", {}, self.api_cache["discover"])
 
         if selection_id and "collection" in res:
             res = self._find_id_in_selection(res["collection"], selection_id)
-            res = {"collection": res}
 
         return self._map_json_to_collection(res)
 
@@ -116,14 +115,12 @@ class ApiV2(ApiInterface):
     def _find_id_in_selection(self, selection, selection_id):
         for category in selection:
             if category["id"] == selection_id:
-                if "playlists" in category:
-                    return category["playlists"]
-                elif "system_playlists" in category:
-                    return category["system_playlists"]
+                if "items" in category:
+                    return category["items"]
                 elif "tracks" in category:
-                    return category["tracks"]
-            elif "system_playlists" in category:
-                res = self._find_id_in_selection(category["system_playlists"], selection_id)
+                    return {"collection": category["tracks"]}
+            elif "items" in category:
+                res = self._find_id_in_selection(category["items"]["collection"], selection_id)
                 if res:
                     return res
 
