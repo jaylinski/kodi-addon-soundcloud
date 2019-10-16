@@ -80,7 +80,7 @@ class ApiV2(ApiInterface):
         payload["app_locale"] = self.api_lang
         headers = {"Accept-Encoding": "gzip"}
         path = self.api_host + path
-        cache_key = hashlib.sha1(path + str(payload)).hexdigest()
+        cache_key = hashlib.sha1((path + str(payload)).encode()).hexdigest()
 
         xbmc.log(
             "plugin.audio.soundcloud::ApiV2() Calling %s with header %s and payload %s" %
