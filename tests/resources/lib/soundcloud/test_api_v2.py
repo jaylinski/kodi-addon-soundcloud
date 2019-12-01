@@ -1,6 +1,6 @@
 import json
 import sys
-from unittest import TestCase
+from unittest import mock, TestCase
 from unittest.mock import MagicMock, Mock, DEFAULT, ANY
 sys.modules['xbmc'] = MagicMock()
 sys.modules['xbmcaddon'] = MagicMock()
@@ -27,6 +27,29 @@ class ApiV2TestCase(TestCase):
     def _side_effect_settings_get(*args):
         if args[0] == "audio.format":
             return "2"  # Default in settings (mp3 progressive)
+        else:
+            return DEFAULT
+
+    @staticmethod
+    def _side_effect_request_get(*args, **keywargs):
+        if args[0] == "https://soundcloud.com/":
+            with open("./tests/mocks/html/soundcloud.com.html") as f:
+                mock_data = f.read()
+            obj = mock.Mock()
+            obj.text = mock_data
+            return obj
+        elif args[0] == "https://a-v2.sndcdn.com/assets/0-744ba03a-3.js":
+            with open("./tests/mocks/html/assets.0-744ba03a-3.js") as f:
+                mock_data = f.read()
+            obj = mock.Mock()
+            obj.text = mock_data
+            return obj
+        elif args[0] == "https://a-v2.sndcdn.com/assets/49-4786eb1d-3.js":
+            with open("./tests/mocks/html/assets.49-4786eb1d-3.js") as f:
+                mock_data = f.read()
+            obj = mock.Mock()
+            obj.text = mock_data
+            return obj
         else:
             return DEFAULT
 
@@ -173,3 +196,10 @@ class ApiV2TestCase(TestCase):
 
         self.assertEqual(res.items[0].label, "Noisia")
         self.assertEqual(res.items[1].label, "NOISIA")
+
+    @mock.patch('requests.get')
+    def test_fetch_client_id(self, mock_method):
+        mock_method.side_effect = self._side_effect_request_get
+
+        client_id = self.api.fetch_client_id()
+        self.assertEqual(client_id, "1XduoqV99lROqCMpijtDo5WnJmpaLuYm")
