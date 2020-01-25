@@ -153,7 +153,7 @@ def run():
         xbmcplugin.addDirectoryItems(handle, collection, len(collection))
         xbmcplugin.endOfDirectory(handle)
 
-    if path == PATH_USER:
+    elif path == PATH_USER:
         user_id = args.get("id")[0]
         default_action = args.get("call")[0]
         if user_id:
