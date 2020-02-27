@@ -129,7 +129,9 @@ def run():
                 xbmcplugin.endOfDirectory(handle)
             elif "playlists" in action:
                 xbmcplugin.setContent(handle, 'albums')
-                collection = listItems.from_collection(api.search(query, "playlists_without_albums"))
+                collection = listItems.from_collection(
+                    api.search(query, "playlists_without_albums")
+                )
                 xbmcplugin.addDirectoryItems(handle, collection, len(collection))
                 xbmcplugin.endOfDirectory(handle)
             else:

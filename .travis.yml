@@ -10,6 +10,8 @@ jobs:
 
 install:
   - pip install pipenv
-  - pipenv install
+  - pipenv install --dev
 
-script: pipenv run test
+script:
+  - pipenv run lint
+  - pipenv run test
