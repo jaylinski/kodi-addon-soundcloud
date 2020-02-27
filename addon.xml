@@ -14,6 +14,7 @@
         <summary lang="en_GB">SoundCloud – Music and podcast streaming platform</summary>
         <description lang="de_DE">SoundCloud ist eine Musik- und Podcast-Streaming-Plattform, mit der Du Millionen von Songs aus der ganzen Welt anhören kannst.</description>
 		<description lang="en_GB">SoundCloud is a music and podcast streaming platform that lets you listen to millions of songs from around the world.</description>
+        <disclaimer lang="en_GB">This plugin is not official, approved or endorsed by SoundCloud.</disclaimer>
         <language></language>
         <platform>all</platform>
         <license>MIT</license>
