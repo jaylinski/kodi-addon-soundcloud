@@ -2,9 +2,9 @@ import json
 import sys
 from unittest import mock, TestCase
 from unittest.mock import MagicMock, Mock, DEFAULT, ANY
-sys.modules['xbmc'] = MagicMock()
-sys.modules['xbmcaddon'] = MagicMock()
-sys.modules['xbmcgui'] = MagicMock()
+sys.modules["xbmc"] = MagicMock()
+sys.modules["xbmcaddon"] = MagicMock()
+sys.modules["xbmcgui"] = MagicMock()
 from resources.lib.kodi.settings import Settings
 from resources.lib.soundcloud.api_v2 import ApiV2
 
@@ -197,7 +197,7 @@ class ApiV2TestCase(TestCase):
         self.assertEqual(res.items[0].label, "Noisia")
         self.assertEqual(res.items[1].label, "NOISIA")
 
-    @mock.patch('requests.get')
+    @mock.patch("requests.get")
     def test_fetch_client_id(self, mock_method):
         mock_method.side_effect = self._side_effect_request_get
 
