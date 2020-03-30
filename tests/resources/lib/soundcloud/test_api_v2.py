@@ -17,8 +17,12 @@ class ApiV2TestCase(TestCase):
     @staticmethod
     def _side_effect_do_request(*args):
         if args[0] == "/tracks":
-            with open("./tests/mocks/api_v2_discover_tracks.json") as f:
-                mock_data = f.read()
+            if args[1].get("ids") == "53787294":
+                with open("./tests/mocks/api_v2_playlist_tracks.json") as f:
+                    mock_data = f.read()
+            else:
+                with open("./tests/mocks/api_v2_discover_tracks.json") as f:
+                    mock_data = f.read()
             return json.loads(mock_data)
         else:
             return DEFAULT
@@ -102,6 +106,20 @@ class ApiV2TestCase(TestCase):
         self.assertEqual(res.items[1].label, "Noisia Radio")
         self.assertEqual(res.items[1].label2, "Noisia  Radio")
         self.assertEqual(res.items[1].thumb, "https://i1.sndcdn.com/avatars-000559848966-7tof1c-t500x500.jpg")
+
+    def test_playlist(self):
+        with open("./tests/mocks/api_v2_playlists.json") as f:
+            mock_data = f.read()
+
+        self.api._do_request = Mock(return_value=json.loads(mock_data))
+        self.api._do_request.side_effect = self._side_effect_do_request
+
+        res = self.api.search("foo")
+
+        self.assertEqual(res.items[0].label, "Rock Your Body - Justin Timberlake (Alex Dogmatic Remix)")
+        self.assertEqual(res.items[1].label, "Philip's Push")
+        self.assertEqual(res.items[2].label, "The Man I Want To Be")
+        self.assertEqual(res.items[3].label, "2004 Car Commercial")
 
     def test_resolve_id(self):
         with open("./tests/mocks/api_v2_tracks.json") as f:
