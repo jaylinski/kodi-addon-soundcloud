@@ -67,11 +67,19 @@ class ApiV2TestCase(TestCase):
 
         self.assertEqual(res.items[0].label, "Deadmau5 - Raise Your Weapon (Noisia Remix)")
         self.assertEqual(res.items[0].info["artist"], "NOISIA")
+        self.assertEqual(res.items[0].info["description"], "The description (1)")
+        self.assertEqual(res.items[0].info["duration"], 194.763)
+        self.assertEqual(res.items[0].info["genre"], "Dubstep")
+        self.assertEqual(res.items[0].info["date"], "2011-05-23T16:22:06Z")
         self.assertEqual(res.items[0].media, "https://api-v2.soundcloud.com/media/soundcloud:tracks:15784497/580ad806-b3ab-440f-adbe-c12a83258a37/stream/progressive")
         self.assertEqual(res.items[0].thumb, "https://i1.sndcdn.com/artworks-000007527658-smjpzh-t500x500.jpg")
 
         self.assertEqual(res.items[1].label, "Labrinth ft. Tinie Tempah - Earthquake (Noisia Remix)")
         self.assertEqual(res.items[1].info["artist"], "NOISIA")
+        self.assertEqual(res.items[1].info["description"], "The description (2)")
+        self.assertEqual(res.items[1].info["duration"], 389.371)
+        self.assertEqual(res.items[1].info["genre"], "Dubstep")
+        self.assertEqual(res.items[1].info["date"], "2011-09-17T15:39:49Z")
         self.assertEqual(res.items[1].media, "https://api-v2.soundcloud.com/media/soundcloud:tracks:23547065/e7846551-5c8e-4b93-b4f0-f94bfa7b1275/stream/progressive")
         self.assertEqual(res.items[1].thumb, "https://i1.sndcdn.com/artworks-000011681052-n1a6w6-t500x500.jpg")
 
