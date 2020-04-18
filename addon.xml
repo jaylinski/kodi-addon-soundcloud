@@ -8,7 +8,6 @@
     <extension point="xbmc.python.pluginsource" library="addon.py">
         <provides>audio</provides>
     </extension>
-    <extension point="xbmc.service" library="service.py" />
     <extension point="xbmc.addon.metadata">
         <summary lang="de_DE">SoundCloud – Musik- und Podcast-Streaming-Plattform</summary>
         <summary lang="en_GB">SoundCloud – Music and podcast streaming platform</summary>

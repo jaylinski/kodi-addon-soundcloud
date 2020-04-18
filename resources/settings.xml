@@ -9,7 +9,7 @@
     </category>
     <category label="30051">
         <setting label="30060" type="lsep"/>
-        <setting id="apiv2.clientid" type="text" label="30061" value="" default="" />
+        <setting id="apiv2.client_id" type="text" label="30061" value="" default="" />
         <setting id="apiv2.locale" type="enum" label="30062" lvalues="30063|30064" default="0" />
     </category>
 </settings>
