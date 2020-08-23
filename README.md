@@ -40,7 +40,7 @@ Examples:
 
 * `plugin://plugin.audio.soundcloud/play/?track_id=1`
 * `plugin://plugin.audio.soundcloud/play/?playlist_id=1`
-* `plugin://plugin.audio.soundcloud/play/?url=https%3A//soundcloud.com/kingtheta/sets/getting-over-it`
+* `plugin://plugin.audio.soundcloud/play/?url=https%3A%2F%2Fsoundcloud.com%2Fpslwave%2Fallwithit`
 
 Legacy (will be removed in v4.0):
 
