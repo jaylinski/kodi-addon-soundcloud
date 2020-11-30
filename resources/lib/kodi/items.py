@@ -4,7 +4,7 @@ standard_library.install_aliases()  # noqa: E402
 from resources.lib.kodi.utils import format_bold
 from resources.routes import *
 
-import urllib.parse
+import urllib
 import xbmcgui
 
 
@@ -30,6 +30,11 @@ class Items:
         # Discover
         list_item = xbmcgui.ListItem(label=self.addon.getLocalizedString(30103))
         url = self.addon_base + PATH_DISCOVER
+        items.append((url, list_item, True))
+
+        # Favourites
+        list_item = xbmcgui.ListItem(label="Favourites")
+        url = self.addon_base + PATH_FAVOURITES
         items.append((url, list_item, True))
 
         # Settings

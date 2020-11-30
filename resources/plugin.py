@@ -11,7 +11,7 @@ from resources.lib.kodi.vfs import VFS
 from resources.routes import *
 import os
 import sys
-import urllib.parse
+import urllib
 import xbmc
 import xbmcaddon
 import xbmcgui
@@ -147,6 +147,11 @@ def run():
                 search(handle, query)
             else:
                 xbmc.log("Invalid search action", xbmc.LOGERROR)
+    elif path == PATH_FAVOURITES:
+        li = xbmcgui.ListItem(label="placeholder")
+        xbmcplugin.addDirectoryItem(handle, addon_base + PATH_FAVOURITES + "user", li)
+        xbmcplugin.endOfDirectory(handle)
+
 
     # Legacy search query used by Chorus2 (@deprecated)
     elif path == PATH_SEARCH_LEGACY:
