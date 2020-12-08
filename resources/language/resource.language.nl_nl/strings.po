@@ -40,11 +40,6 @@ msgctxt "#30013"
 msgid "History size"
 msgstr "Zoekgeschiedenis grootte"
 
-# Settings - Advanced
-msgctxt "#30051"
-msgid "Advanced"
-msgstr "Geavanceerd"
-
 msgctxt "#30060"
 msgid "API v2"
 msgstr ""

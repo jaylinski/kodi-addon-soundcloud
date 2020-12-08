@@ -1,8 +1,7 @@
-from future.utils import with_metaclass
 from abc import ABCMeta, abstractmethod
 
 
-class ApiInterface(with_metaclass(ABCMeta)):
+class ApiInterface(metaclass=ABCMeta):
     @abstractmethod
     def search(self, query, kind): pass
 

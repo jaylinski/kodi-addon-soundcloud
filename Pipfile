@@ -4,15 +4,14 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
-kodistubs = "*"
+kodistubs = "~=19.0.1"
 pycodestyle = "*"
 
 [packages]
-future = "*"
-requests = "*"
+requests = "~=2.22.0"
 
 [requires]
-python_version = "2.7"
+python_version = "3.6"
 
 [scripts]
 build = "python scripts/build.py"

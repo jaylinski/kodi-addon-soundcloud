@@ -12,19 +12,15 @@ class VFS:
     def read(self, filename):
         filepath = os.path.join(self.path, filename)
         if xbmcvfs.exists(filepath):
-            file = xbmcvfs.File(filepath)
-            string = file.read()
-            file.close()
-            return string
+            with xbmcvfs.File(filepath) as file:
+                return file.read()
         else:
             return None
 
     def write(self, filename, string):
         filepath = os.path.join(self.path, filename)
-        file = xbmcvfs.File(filepath, "w")
-        success = file.write(string)
-        file.close()
-        return filepath if success else False
+        with xbmcvfs.File(filepath, "w") as file:
+            return filepath if file.write(string) else False
 
     def remove_dir(self, path):
         dir_list, file_list = xbmcvfs.listdir(path)
