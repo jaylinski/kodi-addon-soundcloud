@@ -1,7 +1,3 @@
-from future import standard_library
-from future.utils import PY2
-standard_library.install_aliases()  # noqa: E402
-
 from resources.lib.soundcloud.api_v2 import ApiV2
 from resources.lib.kodi.cache import Cache
 from resources.lib.kodi.items import Items
@@ -16,13 +12,12 @@ import xbmc
 import xbmcaddon
 import xbmcgui
 import xbmcplugin
+import xbmcvfs
 
 addon = xbmcaddon.Addon()
 addon_id = addon.getAddonInfo("id")
 addon_base = "plugin://" + addon_id
-addon_profile_path = xbmc.translatePath(addon.getAddonInfo("profile"))
-if PY2:
-    addon_profile_path = addon_profile_path.decode("utf-8")
+addon_profile_path = xbmcvfs.translatePath(addon.getAddonInfo("profile"))
 vfs = VFS(addon_profile_path)
 vfs_cache = VFS(os.path.join(addon_profile_path, "cache"))
 settings = Settings(addon)

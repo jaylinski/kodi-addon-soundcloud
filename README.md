@@ -6,6 +6,7 @@
 [![Build Status](https://travis-ci.com/jaylinski/kodi-addon-soundcloud.svg?branch=master)](https://travis-ci.com/jaylinski/kodi-addon-soundcloud)
 [![Link to Kodi forum](https://img.shields.io/badge/Kodi-Forum-informational.svg)](https://forum.kodi.tv/showthread.php?tid=206635)
 [![Link to Kodi wiki](https://img.shields.io/badge/Kodi-Wiki-informational.svg)](https://kodi.wiki/view/Add-on:SoundCloud)
+[![Link to Kodi releases](https://img.shields.io/badge/Kodi-v19%20%22Matrix%22-green.svg)](https://kodi.wiki/view/Releases)
 [![Link to Kodi releases](https://img.shields.io/badge/Kodi-v18%20%22Leia%22-green.svg)](https://kodi.wiki/view/Releases)
 [![Link to Kodi releases](https://img.shields.io/badge/Kodi-v17%20%22Krypton%22-green.svg)](https://kodi.wiki/view/Releases)
 
@@ -65,8 +66,6 @@ Run `pipenv run lint`.
 ### Test
 
 Run `pipenv run test`.
-
-> Requires at least Python 3.6!
 
 ## Roadmap
 
