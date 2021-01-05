@@ -2,8 +2,8 @@ from future import standard_library
 standard_library.install_aliases()  # noqa: E402
 
 from resources.lib.models.list_item import ListItem
-from resources.routes import *
-import urllib.parse
+from resources.routes import PATH_USER
+import urllib
 import xbmcgui
 
 

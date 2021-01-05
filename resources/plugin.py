@@ -6,6 +6,7 @@ from resources.lib.soundcloud.api_v2 import ApiV2
 from resources.lib.kodi.cache import Cache
 from resources.lib.kodi.items import Items
 from resources.lib.kodi.search_history import SearchHistory
+from resources.lib.kodi.myFavourites import MyFavourites
 from resources.lib.kodi.settings import Settings
 from resources.lib.kodi.vfs import VFS
 from resources.routes import *
@@ -29,6 +30,7 @@ settings = Settings(addon)
 cache = Cache(settings, vfs_cache)
 api = ApiV2(settings, xbmc.getLanguage(xbmc.ISO_639_1), cache)
 search_history = SearchHistory(settings, vfs)
+myFavourites = MyFavourites(vfs)
 listItems = Items(addon, addon_base, search_history)
 
 
@@ -148,9 +150,32 @@ def run():
             else:
                 xbmc.log("Invalid search action", xbmc.LOGERROR)
     elif path == PATH_FAVOURITES:
-        li = xbmcgui.ListItem(label="placeholder")
-        xbmcplugin.addDirectoryItem(handle, addon_base + PATH_FAVOURITES + "user", li)
-        xbmcplugin.endOfDirectory(handle)
+        action = args.get("action", None)
+        favUsers = myFavourites.get("user")
+        items = []
+        if favUsers is None:
+            li = xbmcgui.ListItem(label="placeholder")
+            url = addon_base + PATH_FAVOURITES
+            xbmcplugin.addDirectoryItem(handle, url, li)
+            xbmcplugin.endOfDirectory(handle)
+        else:
+            if action is None:
+                li = xbmcgui.ListItem(label="Users")
+                url = addon_base + PATH_FAVOURITES + "?action=users"
+                xbmcplugin.addDirectoryItem(handle, url, li, True)
+                xbmcplugin.endOfDirectory(handle)
+            elif "users" in action:
+                for k in favUsers:
+                    li = xbmcgui.ListItem(label=k.get("name"))
+                    url = addon_base + PATH_USER + "?" + urllib.parse.urlencode({
+                       "id": k.get("id"),
+                       "call": "/users/{id}/tracks".format(id=k.get("id"))
+                    })
+                    items.append((url, li, True))
+                xbmcplugin.addDirectoryItems(handle, items, len(items))
+                xbmcplugin.endOfDirectory(handle)
+
+
 
 
     # Legacy search query used by Chorus2 (@deprecated)
