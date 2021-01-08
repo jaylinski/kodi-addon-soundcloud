@@ -145,11 +145,14 @@ class Items:
 
         return items
 
-    def from_collection(self, collection):
+    def from_collection(self, collection, dataPath=None):
         items = []
 
         for item in collection.items:
-            items.append(item.to_list_item(self.addon_base))
+            if dataPath != None:
+                items.append(item.to_list_item(self.addon_base, dataPath))
+            else:
+                items.append(item.to_list_item(self.addon_base))
 
         if collection.next_href:
             next_item = xbmcgui.ListItem(label=self.addon.getLocalizedString(30901))
