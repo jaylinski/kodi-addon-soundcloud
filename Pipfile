@@ -6,6 +6,7 @@ verify_ssl = true
 [dev-packages]
 kodistubs = "*"
 pycodestyle = "*"
+pylint = "<2.0.0"
 
 [packages]
 future = "*"
