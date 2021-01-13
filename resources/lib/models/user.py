@@ -22,8 +22,14 @@ class User(ListItem):
             "call": "/users/{id}/tracks".format(id=self.id)
         })
         list_item.addContextMenuItems([(
-            "add myFavourites",
-             "RunScript({0}/resources/addToFav.py,{1},{2}:{3})".format(xbmc.translatePath("special://home/addons/plugin.audio.soundcloud"), dataPath, self.label, self.id)
+            "Add To My Favourites",
+             "RunScript({0}/resources/manageFav.py,{1},{2},{3}:{4})".format(
+                 xbmc.translatePath("special://home/addons/plugin.audio.soundcloud"),
+                 dataPath,
+                 "add",
+                 self.label.encode('utf-8'),
+                 self.id
+                 )
              )])
 
         return url, list_item, True

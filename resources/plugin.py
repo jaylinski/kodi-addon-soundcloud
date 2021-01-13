@@ -154,7 +154,7 @@ def run():
         favUsers = myFavourites.get("user")
         items = []
         if favUsers is None:
-            li = xbmcgui.ListItem(label="placeholder")
+            li = xbmcgui.ListItem(label="empty")
             url = addon_base + PATH_FAVOURITES
             xbmcplugin.addDirectoryItem(handle, url, li)
             xbmcplugin.endOfDirectory(handle)
@@ -171,6 +171,16 @@ def run():
                        "id": k.get("id"),
                        "call": "/users/{id}/tracks".format(id=k.get("id"))
                     })
+                    li.addContextMenuItems([(
+                        "Remove from My Favourites",
+                        "RunScript({0}/resources/manageFav.py,{1},{2},{3}:{4})".format(
+                            xbmc.translatePath("special://home/addons/plugin.audio.soundcloud"),
+                            addon_profile_path,
+                            "remove",
+                            k.get("name"),
+                            k.get("id")
+                            )
+                    )])
                     items.append((url, li, True))
                 xbmcplugin.addDirectoryItems(handle, items, len(items))
                 xbmcplugin.endOfDirectory(handle)

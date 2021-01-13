@@ -33,7 +33,7 @@ class Items:
         items.append((url, list_item, True))
 
         # Favourites
-        list_item = xbmcgui.ListItem(label="Favourites")
+        list_item = xbmcgui.ListItem(label="My Favourites")
         url = self.addon_base + PATH_FAVOURITES
         items.append((url, list_item, True))
 
