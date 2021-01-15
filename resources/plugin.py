@@ -193,6 +193,16 @@ def run():
             for k in favTracks:
                 # not so elegant but makes it playable
                 collection = listItems.from_collection(api.resolve_id(k.get("id")))
+                collection[0][1].addContextMenuItems([(
+                    "Remove from My Favourites",
+                    "RunScript({0}/resources/manageFav.py,{1},{2},{3}:{4})".format(
+                        xbmc.translatePath("special://home/addons/plugin.audio.soundcloud"),
+                        addon_profile_path,
+                        "remove:track",
+                        k.get("name"),
+                        k.get("id")
+                    )
+                )])
                 items.append(collection[0])
             xbmcplugin.addDirectoryItems(handle, items, len(items))
             xbmcplugin.endOfDirectory(handle)

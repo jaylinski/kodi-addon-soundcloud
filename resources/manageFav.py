@@ -36,7 +36,10 @@ def run():
         if not isIdExist(collection, itemId):
             if collection is None:
                 items = []
-                data[elemtype] = items
+                if elemtype == "user":
+                    data["user"] = items
+                else:
+                    data["track"] = items
             data[elemtype].append({
                 "name": itemName,
                 "id": itemId
