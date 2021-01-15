@@ -22,6 +22,10 @@ def run():
         sys.exit(1)
     if command.split(":")[0] not in ("add", "remove"):
         sys.exit(1)
+    if not os.path.exists(os.path.join(filePath, MyFavourites.filename)):
+        with open(os.path.join(filePath, MyFavourites.filename), 'w') as f:
+            data = {}
+            json.dump(data, f)
 
     itemName = item.split(":")[0]
     itemId = item.split(":")[1]
