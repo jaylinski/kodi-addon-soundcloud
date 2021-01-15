@@ -26,7 +26,7 @@ class User(ListItem):
              "RunScript({0}/resources/manageFav.py,{1},{2},{3}:{4})".format(
                  xbmc.translatePath("special://home/addons/plugin.audio.soundcloud"),
                  dataPath,
-                 "add",
+                 "add:user",
                  self.label.encode('utf-8'),
                  self.id
                  )

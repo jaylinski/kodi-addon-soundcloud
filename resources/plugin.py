@@ -152,41 +152,50 @@ def run():
     elif path == PATH_FAVOURITES:
         action = args.get("action", None)
         favUsers = myFavourites.get("user")
+        favTracks = myFavourites.get("track")
         items = []
-        if favUsers is None:
+        if (favUsers is None) and (favTracks is None):
             li = xbmcgui.ListItem(label="empty")
             url = addon_base + PATH_FAVOURITES
             xbmcplugin.addDirectoryItem(handle, url, li)
             xbmcplugin.endOfDirectory(handle)
-        else:
-            if action is None:
+        if action is None:
+            if favUsers is not None:
                 li = xbmcgui.ListItem(label="Users")
                 url = addon_base + PATH_FAVOURITES + "?action=users"
                 xbmcplugin.addDirectoryItem(handle, url, li, True)
-                xbmcplugin.endOfDirectory(handle)
-            elif "users" in action:
-                for k in favUsers:
-                    li = xbmcgui.ListItem(label=k.get("name"))
-                    url = addon_base + PATH_USER + "?" + urllib.parse.urlencode({
-                       "id": k.get("id"),
-                       "call": "/users/{id}/tracks".format(id=k.get("id"))
-                    })
-                    li.addContextMenuItems([(
-                        "Remove from My Favourites",
-                        "RunScript({0}/resources/manageFav.py,{1},{2},{3}:{4})".format(
-                            xbmc.translatePath("special://home/addons/plugin.audio.soundcloud"),
-                            addon_profile_path,
-                            "remove",
-                            k.get("name"),
-                            k.get("id")
-                            )
-                    )])
-                    items.append((url, li, True))
-                xbmcplugin.addDirectoryItems(handle, items, len(items))
-                xbmcplugin.endOfDirectory(handle)
-
-
-
+            if favTracks is not None:
+                li = xbmcgui.ListItem(label="Tracks")
+                url = addon_base + PATH_FAVOURITES + "?action=tracks"
+                xbmcplugin.addDirectoryItem(handle, url, li, True)
+            xbmcplugin.endOfDirectory(handle)
+        elif "users" in action:
+            for k in favUsers:
+                li = xbmcgui.ListItem(label=k.get("name"))
+                url = addon_base + PATH_USER + "?" + urllib.parse.urlencode({
+                    "id": k.get("id"),
+                    "call": "/users/{id}/tracks".format(id=k.get("id"))
+                })
+                li.addContextMenuItems([(
+                    "Remove from My Favourites",
+                    "RunScript({0}/resources/manageFav.py,{1},{2},{3}:{4})".format(
+                        xbmc.translatePath("special://home/addons/plugin.audio.soundcloud"),
+                        addon_profile_path,
+                        "remove:user",
+                        k.get("name"),
+                        k.get("id")
+                    )
+                )])
+                items.append((url, li, True))
+            xbmcplugin.addDirectoryItems(handle, items, len(items))
+            xbmcplugin.endOfDirectory(handle)
+        elif "tracks" in action:
+            for k in favTracks:
+                # not so elegant but makes it playable
+                collection = listItems.from_collection(api.resolve_id(k.get("id")))
+                items.append(collection[0])
+            xbmcplugin.addDirectoryItems(handle, items, len(items))
+            xbmcplugin.endOfDirectory(handle)
 
     # Legacy search query used by Chorus2 (@deprecated)
     elif path == PATH_SEARCH_LEGACY:
@@ -200,7 +209,7 @@ def run():
         default_action = args.get("call")[0]
         if user_id:
             items = listItems.user(user_id)
-            collection = listItems.from_collection(api.call(default_action))
+            collection = listItems.from_collection(api.call(default_action), addon_profile_path)
             xbmcplugin.addDirectoryItems(handle, items, len(items))
             xbmcplugin.addDirectoryItems(handle, collection, len(collection))
             xbmcplugin.endOfDirectory(handle)
@@ -224,7 +233,7 @@ def resolve_list_item(handle, list_item):
 
 def search(handle, query):
     search_options = listItems.search_sub(query)
-    collection = listItems.from_collection(api.search(query))
+    collection = listItems.from_collection(api.search(query), addon_profile_path)
     xbmcplugin.addDirectoryItems(handle, search_options, len(collection))
     xbmcplugin.addDirectoryItems(handle, collection, len(collection))
     xbmcplugin.endOfDirectory(handle)
