@@ -149,7 +149,7 @@ class Items:
         items = []
 
         for item in collection.items:
-            if dataPath != None:
+            if dataPath is not None:
                 items.append(item.to_list_item(self.addon_base, dataPath))
             else:
                 items.append(item.to_list_item(self.addon_base))

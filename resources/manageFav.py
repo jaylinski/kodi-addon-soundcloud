@@ -8,6 +8,7 @@ import sys
 import xbmc
 import json
 
+
 def run():
     args = sys.argv[1:]
     filePath = args[0]
@@ -32,7 +33,7 @@ def run():
     elemtype = command.split(":")[1].strip()
     command = command.split(":")[0].strip()
 
-    if command=="add":
+    if command == "add":
         f = open(os.path.join(filePath, MyFavourites.filename))
         data = json.load(f)
         collection = data.get(elemtype)
@@ -70,5 +71,6 @@ def isIdExist(dictionary, id):
         return False
     else:
         return False
+
 
 run()

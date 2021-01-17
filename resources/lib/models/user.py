@@ -7,6 +7,7 @@ import urllib
 import xbmcgui
 import xbmc
 
+
 class User(ListItem):
     thumb = ""
     info = {}
@@ -23,7 +24,7 @@ class User(ListItem):
         })
         list_item.addContextMenuItems([(
             "Add To My Favourites",
-             "RunScript({0}/resources/manageFav.py,{1},{2},{3}:{4})".format(
+            "RunScript({0}/resources/manageFav.py,{1},{2},{3}:{4})".format(
                  xbmc.translatePath("special://home/addons/plugin.audio.soundcloud"),
                  dataPath,
                  "add:user",

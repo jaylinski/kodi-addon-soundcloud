@@ -11,4 +11,3 @@ class MyFavourites:
         if elemtype not in favs:
             return None
         return favs.get(elemtype)
-

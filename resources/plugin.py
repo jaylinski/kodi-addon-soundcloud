@@ -121,7 +121,10 @@ def run():
                 search(handle, query)
             elif "people" in action:
                 xbmcplugin.setContent(handle, "artists")
-                collection = listItems.from_collection(api.search(query, "users"), addon_profile_path)
+                collection = listItems.from_collection(
+                    api.search(query, "users"),
+                    addon_profile_path
+                )
                 xbmcplugin.addDirectoryItems(handle, collection, len(collection))
                 xbmcplugin.endOfDirectory(handle)
             elif "albums" in action:
