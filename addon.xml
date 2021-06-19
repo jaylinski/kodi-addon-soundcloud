@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.audio.soundcloud" name="SoundCloud" version="3.2.0" provider-name="jaylinski">
+<addon id="plugin.audio.soundcloud" name="SoundCloud" version="4.0.0" provider-name="jaylinski">
     <requires>
-        <import addon="xbmc.python" version="2.25.0"/>
-        <import addon="script.module.future" version="0.16.0"/>
-        <import addon="script.module.requests" version="2.4.3"/>
+        <import addon="xbmc.python" version="3.0.0"/>
+        <import addon="script.module.requests" version="2.22.0"/>
     </requires>
     <extension point="xbmc.python.pluginsource" library="addon.py">
         <provides>audio</provides>
@@ -19,10 +18,8 @@
         <forum>https://forum.kodi.tv/showthread.php?tid=206635</forum>
         <website>https://soundcloud.com</website>
         <source>https://github.com/jaylinski/kodi-addon-soundcloud</source>
-        <news>3.2.0 (2020-04-18)
-[fix] Custom client ID won't be overwritten anymore
-[new] Added ability to clear cache in settings
-[new] Track descriptions can now be viewed in info window
+        <news>4.0.0 (2020-12-12)
+Added support for Kodi v19 (Matrix)
         </news>
         <assets>
             <icon>resources/icon.png</icon>
