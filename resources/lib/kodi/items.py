@@ -1,7 +1,7 @@
 from resources.lib.kodi.utils import format_bold
 from resources.routes import *
 
-import urllib.parse
+import urllib
 import xbmcgui
 
 
@@ -27,6 +27,11 @@ class Items:
         # Discover
         list_item = xbmcgui.ListItem(label=self.addon.getLocalizedString(30103))
         url = self.addon_base + PATH_DISCOVER
+        items.append((url, list_item, True))
+
+        # Favourites
+        list_item = xbmcgui.ListItem(label="My Favourites")
+        url = self.addon_base + PATH_FAVOURITES
         items.append((url, list_item, True))
 
         # Settings
@@ -137,11 +142,14 @@ class Items:
 
         return items
 
-    def from_collection(self, collection):
+    def from_collection(self, collection, dataPath=None):
         items = []
 
         for item in collection.items:
-            items.append(item.to_list_item(self.addon_base))
+            if dataPath is not None:
+                items.append(item.to_list_item(self.addon_base, dataPath))
+            else:
+                items.append(item.to_list_item(self.addon_base))
 
         if collection.next_href:
             next_item = xbmcgui.ListItem(label=self.addon.getLocalizedString(30901))

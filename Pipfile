@@ -6,6 +6,7 @@ verify_ssl = true
 [dev-packages]
 kodistubs = "~=19.0.1"
 pycodestyle = "*"
+pylint = "<2.0.0"
 
 [packages]
 requests = "~=2.22.0"
