@@ -3,7 +3,7 @@
 <img align="right" src="https://github.com/xbmc/xbmc/raw/master/addons/webinterface.default/icon-128.png" alt="Kodi logo">
 
 [![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/jaylinski/kodi-addon-soundcloud.svg)](https://github.com/jaylinski/kodi-addon-soundcloud/releases)
-[![Build Status](https://img.shields.io/github/workflow/status/jaylinski/kodi-addon-soundcloud/Continuous%20Integration/master.svg)](https://github.com/jaylinski/kodi-addon-soundcloud/actions)
+[![CI Build Status](https://github.com/jaylinski/kodi-addon-soundcloud/actions/workflows/ci.yml/badge.svg)](https://github.com/jaylinski/kodi-addon-soundcloud/actions)
 [![Link to Kodi forum](https://img.shields.io/badge/Kodi-Forum-informational.svg)](https://forum.kodi.tv/showthread.php?tid=206635)
 [![Link to Kodi wiki](https://img.shields.io/badge/Kodi-Wiki-informational.svg)](https://kodi.wiki/view/Add-on:SoundCloud)
 [![Link to Kodi releases](https://img.shields.io/badge/Kodi-v19%20%22Matrix%22-green.svg)](https://kodi.wiki/view/Releases)
