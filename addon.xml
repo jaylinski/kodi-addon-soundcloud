@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.audio.soundcloud" name="SoundCloud" version="4.0.2" provider-name="jaylinski">
+<addon id="plugin.audio.soundcloud2" name="SoundCloud2" version="4.0.2" provider-name="Miniontoby">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
         <import addon="script.module.requests" version="2.22.0"/>
@@ -10,9 +10,12 @@
     <extension point="xbmc.addon.metadata">
         <summary lang="de_DE">SoundCloud – Musik- und Podcast-Streaming-Plattform</summary>
         <summary lang="en_GB">SoundCloud – Music and podcast streaming platform</summary>
+        <summary lang="nl_NL">SoundCloud – Muziek- en podcaststreamingplatform</summary>
         <description lang="de_DE">SoundCloud ist eine Musik- und Podcast-Streaming-Plattform, mit der Du Millionen von Songs aus der ganzen Welt anhören kannst.</description>
-		<description lang="en_GB">SoundCloud is a music and podcast streaming platform that lets you listen to millions of songs from around the world.</description>
+        <description lang="en_GB">SoundCloud is a music and podcast streaming platform that lets you listen to millions of songs from around the world.</description>
+        <description lang="nl_NL">SoundCloud is een muziek- en podcaststreamingplatform waarmee je naar miljoenen nummers van over de hele wereld kunt luisteren.</description>
         <disclaimer lang="en_GB">This plugin is not official, approved or endorsed by SoundCloud.</disclaimer>
+        <disclaimer lang="nl_NL">Deze plugin is niet officieel, goedgekeurd of gesteund door SoundCloud</disclaimer>
         <platform>all</platform>
         <license>MIT</license>
         <forum>https://forum.kodi.tv/showthread.php?tid=206635</forum>
