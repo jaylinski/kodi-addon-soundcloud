@@ -145,3 +145,11 @@ msgstr "Niet beschikbaar in jouw land"
 msgctxt "#30903"
 msgid "Preview"
 msgstr ""
+
+msgctxt "#30904"
+msgid "followers"
+msgstr "volgers"
+
+msgctxt "#30905"
+msgid "likes"
+msgstr ""
