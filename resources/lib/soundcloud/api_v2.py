@@ -175,7 +175,8 @@ class ApiV2(ApiInterface):
                     user.label2 = item.get("full_name", "")
                     user.thumb = self._get_thumbnail(item, self.thumbnail_size)
                     user.info = {
-                        "artist": item.get("description", None)
+                        "description": item.get("description", ""),
+                        "followers": item.get("followers_count", 0)
                     }
                     collection.items.append(user)
 
@@ -185,7 +186,9 @@ class ApiV2(ApiInterface):
                     playlist.label2 = item.get("label_name", "")
                     playlist.thumb = self._get_thumbnail(item, self.thumbnail_size)
                     playlist.info = {
-                        "artist": item["user"]["username"]
+                        "artist": item["user"]["username"],
+                        "description": item.get("description", ""),
+                        "likes": item.get("likes_count", 0)
                     }
                     collection.items.append(playlist)
 
@@ -251,7 +254,8 @@ class ApiV2(ApiInterface):
             "genre": item.get("genre", None),
             "date": item.get("display_date", None),
             "description": item.get("description", None),
-            "duration": int(item["duration"]) / 1000
+            "duration": int(item["duration"]) / 1000,
+            "playback_count": item.get("playback_count", 0)
         }
 
         return track

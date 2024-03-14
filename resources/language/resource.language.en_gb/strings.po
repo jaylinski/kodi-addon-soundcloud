@@ -146,3 +146,11 @@ msgstr ""
 msgctxt "#30903"
 msgid "Preview"
 msgstr ""
+
+msgctxt "#30904"
+msgid "followers"
+msgstr ""
+
+msgctxt "#30905"
+msgid "likes"
+msgstr ""

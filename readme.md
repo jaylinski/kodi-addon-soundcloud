@@ -51,7 +51,7 @@ This add-on uses [Pipenv](https://pypi.org/project/pipenv/) to manage its depend
 
 ### Setup
 
-[Install Pipenv](https://pipenv.readthedocs.io/en/latest/install/#installing-pipenv) and run `pipenv install --dev`.
+[Install Pipenv](https://pipenv.pypa.io/en/latest/installation.html#installing-pipenv) and run `pipenv install --dev`.
 
 ### Build
 
