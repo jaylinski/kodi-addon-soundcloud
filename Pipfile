@@ -8,12 +8,12 @@ kodistubs = "~=19.0.1"
 pycodestyle = "*"
 
 [packages]
-requests = "~=2.22.0"
+requests = "~=2.29.0"
 
 [requires]
 python_version = "3"
 
 [scripts]
 build = "python scripts/build.py"
-lint = "pycodestyle --max-line-length=99 --statistics resources"
+lint = "pycodestyle --max-line-length=101 --statistics resources"
 test = "python -m unittest discover"

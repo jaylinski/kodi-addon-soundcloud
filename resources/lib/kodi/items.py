@@ -124,11 +124,12 @@ class Items:
         items = []
 
         # Top 50
-        list_item = xbmcgui.ListItem(label=format_bold(self.addon.getLocalizedString(30301)))
-        url = self.addon_base + PATH_CHARTS + "?" + urllib.parse.urlencode({
-            "action": "top"
-        })
-        items.append((url, list_item, True))
+        # TOOD Not working anymore, replace with new GraphQL API
+        # list_item = xbmcgui.ListItem(label=format_bold(self.addon.getLocalizedString(30301)))
+        # url = self.addon_base + PATH_CHARTS + "?" + urllib.parse.urlencode({
+        #     "action": "top"
+        # })
+        # items.append((url, list_item, True))
 
         # Trending
         list_item = xbmcgui.ListItem(label=format_bold(self.addon.getLocalizedString(30302)))

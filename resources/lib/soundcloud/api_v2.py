@@ -22,7 +22,7 @@ class ApiV2(ApiInterface):
     api_limit = 20
     api_limit_tracks = 50
     api_lang = "en"
-    api_user_agent = "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:96.0) Gecko/20100101 Firefox/96.0"
+    api_user_agent = "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0"
     api_cache = {
         "discover": 120  # 2 hours
     }
@@ -277,7 +277,7 @@ class ApiV2(ApiInterface):
                 response.encoding = "utf-8"  # This speeds up `response.text` by 3 seconds
 
                 # Extract the API key
-                key = re.search(r"exports={\"api-v2\".*client_id:\"(\w*)\"", response.text)
+                key = re.search(r"client_application_id:[1-9]+,client_id:\"(\w*)\"", response.text)
 
                 if key:
                     return str(key.group(1))
