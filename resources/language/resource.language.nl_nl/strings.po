@@ -153,3 +153,11 @@ msgstr "volgers"
 msgctxt "#30905"
 msgid "likes"
 msgstr ""
+
+msgctxt "#30907"
+msgid "Error"
+msgstr "Fout"
+
+msgctxt "#30908"
+msgid "Request was blocked by SoundCloud."
+msgstr "Verzoek werd geblokkeerd door SoundCloud."

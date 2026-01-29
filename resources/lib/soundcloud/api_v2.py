@@ -22,7 +22,7 @@ class ApiV2(ApiInterface):
     api_limit = 20
     api_limit_tracks = 50
     api_lang = "en"
-    api_user_agent = "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0"
+    api_user_agent = "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0"
     api_cache = {
         "discover": 120  # 2 hours
     }
@@ -99,7 +99,11 @@ class ApiV2(ApiInterface):
     def _do_request(self, path, payload, cache=0):
         payload["client_id"] = self.api_client_id
         payload["app_locale"] = self.api_lang
-        headers = {"Accept-Encoding": "gzip", "User-Agent": self.api_user_agent}
+        headers = {
+            "Accept": "application/json",
+            "Accept-Encoding": "gzip",
+            "User-Agent": self.api_user_agent
+        }
         path = self.api_host + path
         cache_key = hashlib.sha1((path + str(payload)).encode()).hexdigest()
 
@@ -118,6 +122,10 @@ class ApiV2(ApiInterface):
 
         # Send the request.
         response = requests.get(path, headers=headers, params=payload).json()
+
+        if "url" in response and "captcha" in response["url"]:
+            xbmc.log("Request blocked by Cloudfront: CAPTCHA ", xbmc.LOGERROR)
+            raise ResourceBlockedException("Request blocked by Soundcloud")
 
         # If caching is active, cache the response.
         if cache:
@@ -320,3 +328,7 @@ class ApiV2(ApiInterface):
     def _chunks(lst, size):
         for i in range(0, len(lst), size):
             yield lst[i:i + size]
+
+
+class ResourceBlockedException(Exception):
+    pass

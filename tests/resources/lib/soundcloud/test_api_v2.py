@@ -6,7 +6,7 @@ sys.modules["xbmc"] = MagicMock()
 sys.modules["xbmcaddon"] = MagicMock()
 sys.modules["xbmcgui"] = MagicMock()
 from resources.lib.kodi.settings import Settings
-from resources.lib.soundcloud.api_v2 import ApiV2
+from resources.lib.soundcloud.api_v2 import ApiV2, ResourceBlockedException
 
 
 class ApiV2TestCase(TestCase):
@@ -53,6 +53,12 @@ class ApiV2TestCase(TestCase):
                 mock_data = f.read()
             obj = mock.Mock()
             obj.text = mock_data
+            return obj
+        elif args[0] == "https://api-v2.soundcloud.com/captcha":
+            with open("./tests/mocks/api_v2_captcha_challenge.json") as f:
+                mock_data = json.loads(f.read())
+            obj = mock.Mock()
+            obj.json = lambda : mock_data
             return obj
         else:
             return DEFAULT
@@ -222,6 +228,12 @@ class ApiV2TestCase(TestCase):
 
         self.assertEqual(res.items[0].label, "Noisia")
         self.assertEqual(res.items[1].label, "NOISIA")
+
+    @mock.patch("requests.get")
+    def test_captcha_challenge(self, mock_method):
+        mock_method.side_effect = self._side_effect_request_get
+
+        self.assertRaises(ResourceBlockedException, self.api._do_request, "/captcha", {})
 
     @mock.patch("requests.get")
     def test_fetch_client_id(self, mock_method):
